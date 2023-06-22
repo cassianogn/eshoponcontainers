@@ -1,0 +1,35 @@
+﻿using Cassiano.EShopOnContainers.Core.Application.Services.EventSourcing.OnError;
+using Cassiano.EShopOnContainers.Core.Application.Services.EventSourcing.OnSuccess;
+using Cassiano.EShopOnContainers.Core.Domain.EventSourcing;
+using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Models;
+using MediatR;
+
+namespace Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Bases
+{
+    public abstract class BaseRequestHandler<TRequest> : IRequestHandler<TRequest, CommandResult>
+        where TRequest : IRequest<CommandResult>
+    {
+        private readonly IMediator _mediator;
+        protected BaseRequestHandler(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+        public async Task<CommandResult> Handle(TRequest request, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var result = await ExecuteAsync(request, cancellationToken);
+                await _mediator.Send(new OnSuccessCommand(request, GetEventType()), cancellationToken);
+                return result;
+            }
+            catch (Exception error)
+            {
+                await _mediator.Send(new OnErrorCommand(request, GetEventType(), error), cancellationToken);
+                throw;
+            }
+        }
+
+        public abstract Task<CommandResult> ExecuteAsync(TRequest request, CancellationToken cancellationToken);
+        protected abstract EventType GetEventType();        
+    }
+}

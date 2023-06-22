@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="Moq" Version="4.18.4" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -21,7 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\application\Cassiano.EShopOnContainers.Core.Application\Cassiano.EShopOnContainers.Core.Application.csproj" />
     <ProjectReference Include="..\..\..\..\..\domain\Cassiano.EShopOnContainers.Core.Domain\Cassiano.EShopOnContainers.Core.Domain.csproj" />
+    <ProjectReference Include="..\Cassiano.EShopOnContainers.Core.Application.Tests.Unit\Cassiano.EShopOnContainers.Core.Application.Tests.Unit.csproj" />
   </ItemGroup>
 
 </Project>

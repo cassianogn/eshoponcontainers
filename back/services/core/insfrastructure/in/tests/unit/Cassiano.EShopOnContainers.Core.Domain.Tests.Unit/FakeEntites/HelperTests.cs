@@ -2,7 +2,7 @@
 using System;
 using Xunit;
 
-namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Tests
+namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.FakeEntites
 {
     public class HelperTests
     {

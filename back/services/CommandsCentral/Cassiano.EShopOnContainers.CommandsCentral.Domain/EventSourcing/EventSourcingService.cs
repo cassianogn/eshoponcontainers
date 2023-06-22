@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Tests
+namespace Cassiano.EShopOnContainers.Core.Domain.EventSourcing
 {
-    internal class EntityTests
+    internal class EventSourcingService
     {
     }
 }
