@@ -3,6 +3,7 @@ using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Bases;
 using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Models;
 using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications;
 using MediatR;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -20,6 +21,9 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus.TestBusMemory.Co
         public override Task<CommandResult> ExecuteAsync(TestBusMemoryWithoutReturnCommand request, CancellationToken cancellationToken)
         {
             _domainNotificationService.Add("test", "the first message has proccess");
+            if (request.ThrowError)
+                throw new Exception("Expected Error");
+
             return Task.FromResult(CommandResult.GetSuccess());
         }
 

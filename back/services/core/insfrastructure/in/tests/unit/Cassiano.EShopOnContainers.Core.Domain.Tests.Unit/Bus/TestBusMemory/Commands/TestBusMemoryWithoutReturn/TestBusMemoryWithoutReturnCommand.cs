@@ -7,5 +7,6 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus.TestBusMemory.Co
     internal class TestBusMemoryWithoutReturnCommand : IAppMessage, IEntityDTO
     {
         public Guid Id { get; set; }
+        public bool ThrowError { get;  set; }
     }
 }

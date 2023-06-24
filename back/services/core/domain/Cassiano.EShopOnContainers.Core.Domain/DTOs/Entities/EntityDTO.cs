@@ -1,6 +1,8 @@
-﻿namespace Cassiano.EShopOnContainers.Core.Domain.DTOs.Entities
+﻿using Cassiano.EShopOnContainers.Core.Domain.Interfaces.DTOs;
+
+namespace Cassiano.EShopOnContainers.Core.Domain.DTOs.Entities
 {
-    public class EntityDTO
+    public class EntityDTO: IEntityDTO
     {
         public Guid Id { get; set; }
     }

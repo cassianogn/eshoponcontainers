@@ -26,7 +26,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus
         {
             var services = new ServiceCollection();
 
-            services.AddCoreApplication<InfrastructureBus>(new List<Assembly>() { typeof(BusTests).Assembly });         
+            services.AddCoreApplication<InfrastructureBus>(new List<Assembly>() { typeof(BusTests).Assembly });
 
             var providers = services.BuildServiceProvider();
 
@@ -53,14 +53,30 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus
         public async Task SendWithoutReturnMemoryMessageAsync()
         {
             var result = await _bus.SendMessage(new TestBusMemoryWithoutReturnCommand());
-            
+
             var hasFirstExecution = _domainNotificationService.GetAll().FirstOrDefault(notification => notification.Code == "test");
 
             Assert.True(result.ProccessCompleted);
             Assert.NotNull(hasFirstExecution);
 
         }
+        
+        [Trait("Categoria", "Bus")]
+        [Fact(DisplayName = "3 - Send Without Return Memory Message with error")]
+        public async Task SendWithoutReturnMemoryMessageWithErrorAsync()
+        {
+            try
+            {
+                await _bus.SendMessage(new TestBusMemoryWithoutReturnCommand() { ThrowError = true });
+            }
+            catch (Exception error)
+            {
+                Assert.Equal("Error on execute command", error.Message);
+                Assert.Equal("Expected Error", error.InnerException!.Message);
+            } 
+            
 
+        }
         [Trait("Categoria", "Bus")]
         [Fact(DisplayName = "3 - Send With Return Memory Message ")]
         public async Task SendWithReturnMemoryMessage()
@@ -77,7 +93,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus
         [Fact(DisplayName = "4 - Publish Infrastructure Event")]
         public async Task PublishInfrastructureEvent()
         {
-            await _bus.PublishEvent(new TestInfrastructureBus.Events.TestBusEvent(), default, BusTransactionType.Infrastructure);
+            await _bus.PublishEvent(new TestBusEvent(), default, BusTransactionType.Infrastructure);
 
             var hasFirstExecution = _domainNotificationService.GetAll().FirstOrDefault(notification => notification.Code == "testinfra");
             Assert.NotNull(hasFirstExecution);
@@ -106,6 +122,6 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus
             Assert.True(result.ProccessCompleted);
             Assert.NotNull(hasFirstExecution);
         }
-        
+
     }
 }

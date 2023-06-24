@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus.TestBusMemory.Commands.TestBusMemoryWithReturn
 {
-    internal class TestBusMemoryWithReturnCommandHandler : BaseRequestResponseHandler<TestBusMemoryWithReturnCommand, Guid>
+    internal class TestBusMemoryWithReturnCommandHandler : BaseRequesHandler<TestBusMemoryWithReturnCommand, Guid>
     {
         private readonly DomainNotificationService _domainNotificationService;
 
