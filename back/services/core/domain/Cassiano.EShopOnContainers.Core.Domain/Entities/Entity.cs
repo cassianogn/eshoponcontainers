@@ -1,6 +1,8 @@
-﻿namespace Cassiano.EShopOnContainers.Core.Domain.Entities
+﻿using Cassiano.EShopOnContainers.Core.Domain.Interfaces.Entities;
+
+namespace Cassiano.EShopOnContainers.Core.Domain.Entities
 {
-    public abstract class Entity
+    public abstract class Entity: IEntity
     {
         protected Entity(Guid id)
         {

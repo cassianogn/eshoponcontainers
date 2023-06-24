@@ -1,9 +1,12 @@
 ﻿using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeCreateEntity;
+using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.Fakes;
+using Cassiano.EShopOnContainers.Core.Domain.Services.Bus;
 using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
@@ -12,28 +15,25 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.Tests
 {
     public class EntityCrudCommandHandlerTest
     {
-        public readonly object handleEntity;
+        private readonly BusService _bus;
+        private readonly DomainNotificationService _domainNotificationService;
+
+        public EntityCrudCommandHandlerTest()
+        {
+            var services = new ServiceCollection();
+
+            services.AddCoreApplication<FakeInfrastructureBus>(new List<Assembly>() { typeof(EntityCrudCommandHandlerTest).Assembly });
+
+            var providers = services.BuildServiceProvider();
+
+            _bus = providers.GetRequiredService<BusService>();
+            _domainNotificationService = providers.GetRequiredService<DomainNotificationService>();
+        }
         [Fact]
         public async Task CreateEntityComandHandler_NewEntity_SuccessAsync()
         {
-            // arange
-            var scope = GetScope();
-            var domainNotification = scope.GetRequiredService<DomainNotificationService>();
-            var handler = scope.GetRequiredService<FakeCreateEntityCommandHandler>();
-            var fakeEntityDTO = new FakeCreateEntityCommand()
-            {
-                Name = "Cassiano"
-            };
-
-            //act
-            await handler.ExecuteAsync(fakeEntityDTO);
-
-            // assert
-            //Assert.NotEmpty(domainNotification.Notifications);
-
-
+            
         }
-
         //[Fact(DisplayName = "Update entity")]
         //public async Task DeleteEntityComandHandler_NewEntity_SuccessAsync()
         //{

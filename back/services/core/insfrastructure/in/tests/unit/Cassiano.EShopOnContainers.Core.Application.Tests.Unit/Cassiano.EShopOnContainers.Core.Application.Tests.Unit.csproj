@@ -24,6 +24,7 @@
 
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\..\application\Cassiano.EShopOnContainers.Core.Application\Cassiano.EShopOnContainers.Core.Application.csproj" />
 		<ProjectReference Include="..\..\..\..\..\domain\Cassiano.EShopOnContainers.Core.Domain\Cassiano.EShopOnContainers.Core.Domain.csproj" />
 	</ItemGroup>
 </Project>
