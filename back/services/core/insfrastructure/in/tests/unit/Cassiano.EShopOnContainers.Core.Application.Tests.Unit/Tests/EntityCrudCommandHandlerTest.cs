@@ -32,7 +32,10 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.Tests
         [Fact]
         public async Task CreateEntityComandHandler_NewEntity_SuccessAsync()
         {
-            
+            await _bus.SendMessage<Guid>(new FakeCreateEntityCommand()
+            {
+                Name = "cassiano"
+            });
         }
         //[Fact(DisplayName = "Update entity")]
         //public async Task DeleteEntityComandHandler_NewEntity_SuccessAsync()
