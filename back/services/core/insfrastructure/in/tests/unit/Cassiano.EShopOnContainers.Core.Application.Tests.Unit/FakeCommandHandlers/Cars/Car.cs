@@ -17,7 +17,6 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHand
         {
             base.SetValidationRules();
             AddDomainValidationPolicy(new CarValidation(this));
-            AddDomainValidationPolicy(new CarValidation2(this));
         }
 
     }

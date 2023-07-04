@@ -6,5 +6,7 @@
         public static string DomainRuleErrorGroup() => "The basic validation rule failed";
         public static string MinLength(string propertyName, int length) => $"{propertyName} must be at least {length} characters long";
         public static string MaxLength(string propertyName, int length) => $"{propertyName} must be at most {length} characters long";
+        public static string EmailValid()
+
     }
 }

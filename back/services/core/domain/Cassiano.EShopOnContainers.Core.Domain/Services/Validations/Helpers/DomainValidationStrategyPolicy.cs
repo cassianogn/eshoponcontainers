@@ -5,7 +5,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Services.Validations.Helpers
 {
     public abstract class DomainValidationStrategyPolicy<TEntity> : IValidationStrategyPolicy<TEntity>
     {   
-        private readonly FluentValidationDecorator<TEntity> _validationRule;
+        public readonly FluentValidationDecorator<TEntity> _validationRule;
         
         protected DomainValidationStrategyPolicy(TEntity entity)
         {
@@ -33,6 +33,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Services.Validations.Helpers
         protected void MaxLength(Expression<Func<TEntity, string>> expressionProperty, string propertyName = "", int length = CoreConstants.MAX_LEN)
         {
             _validationRule.MaxLength(expressionProperty, propertyName, length);
+            _validationRule.
         }
     }
 }
