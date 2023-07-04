@@ -8,6 +8,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.FakeEntites
     {
 
 
+        [Trait("Categoria", "Helpers")]
         [Fact(DisplayName = "String format to search - success")]
         public void Entity_Create_Success()
         {

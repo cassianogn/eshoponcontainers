@@ -4,10 +4,12 @@ using System;
 
 namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeCreateEntity
 {
-    internal class FakeCreateEntityCommand : NamedEntityDTO, IAppMessage<Guid>
+    internal class FakeCreateEntityCommand : NamedEntityDTO, IAppMessage<Guid?>
     {
         public FakeCreateEntityCommand()
         {
         }
+
+        public string Description { get; set; }
     }
 }

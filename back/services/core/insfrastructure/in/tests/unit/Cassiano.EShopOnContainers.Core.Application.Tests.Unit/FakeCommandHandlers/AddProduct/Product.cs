@@ -1,11 +1,11 @@
 ﻿using Cassiano.EShopOnContainers.Core.Domain.Entities;
 using System;
 
-namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeCreateEntity
+namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.AddProduct
 {
-    public class FakeEntity : Entity<FakeEntity>
+    public class Product : Entity<Product>
     {
-        public FakeEntity(Guid id, string name, string description) : base(id)
+        public Product(Guid id, string name, string description) : base(id)
         {
             Name = name;
             Description = description;
@@ -16,7 +16,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHand
         protected override void SetValidationRules()
         {
             base.SetValidationRules();
-            AddDomainValidationPolicy(new FakeEntityValidation(this));
+            AddDomainValidationPolicy(new ProductValidation(this));
         }
     }
 }

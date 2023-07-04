@@ -31,12 +31,11 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Bases
         }
 
         public abstract Task<CommandResult> ExecuteAsync(TRequest request, CancellationToken cancellationToken);
-        protected abstract EventType GetEventType();        
+        protected abstract EventType GetEventType();
     }
 
     public abstract class BaseRequesHandler<TRequest, TResponse> :
         IRequestHandler<TRequest, CommandResult<TResponse>>
-
         where TRequest : IRequest<CommandResult<TResponse>>, IEntityDTO
     {
         private readonly IMediator _mediator;

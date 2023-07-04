@@ -9,6 +9,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.FakeEntites
 {
     public class EntityTests
     {
+        [Trait("Categoria", "Entity")]
         [Fact(DisplayName = "Entity Base Teste")]
         public void Entity_Create_Success()
         {
@@ -25,6 +26,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.FakeEntites
             Assert.False(entity.Deleted);
         }
 
+        [Trait("Categoria", "Entity")]
         [Fact(DisplayName = "Named Entity Base Teste")]
         public void FakeEntity_Create_Success()
         {

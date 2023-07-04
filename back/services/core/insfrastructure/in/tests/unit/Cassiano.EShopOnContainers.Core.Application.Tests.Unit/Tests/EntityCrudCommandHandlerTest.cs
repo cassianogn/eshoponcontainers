@@ -23,19 +23,25 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.Tests
             var services = new ServiceCollection();
 
             services.AddCoreApplication<FakeInfrastructureBus>(new List<Assembly>() { typeof(EntityCrudCommandHandlerTest).Assembly });
-
+            services.AddScoped<IFakeEntityRepository, FakeEntityRepository>();
             var providers = services.BuildServiceProvider();
 
             _bus = providers.GetRequiredService<BusService>();
             _domainNotificationService = providers.GetRequiredService<DomainNotificationService>();
         }
-        [Fact]
+
+        [Trait("Categoria", "BaseCommandHandler")]
+        [Fact(DisplayName = "1 - AddEntity Success")]
         public async Task CreateEntityComandHandler_NewEntity_SuccessAsync()
         {
-            await _bus.SendMessage<Guid>(new FakeCreateEntityCommand()
+            var command = new FakeCreateEntityCommand()
             {
-                Name = "cassiano"
-            });
+                Name = "test",
+                Description = "test"
+            };
+            var commandResult = await _bus.SendMessage<FakeCreateEntityCommand, Guid?>(command);
+            Assert.NotNull(commandResult.Result);
+            Assert.NotEqual(Guid.Empty, commandResult.Result);
         }
         //[Fact(DisplayName = "Update entity")]
         //public async Task DeleteEntityComandHandler_NewEntity_SuccessAsync()

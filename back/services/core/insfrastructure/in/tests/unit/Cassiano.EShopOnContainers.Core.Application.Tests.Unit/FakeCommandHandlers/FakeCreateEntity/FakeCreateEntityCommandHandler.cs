@@ -1,23 +1,19 @@
 ﻿using Cassiano.EShopOnContainers.Core.Application.In.Commands.AddEntity;
-using Cassiano.EShopOnContainers.Core.Domain.EventSourcing;
-using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Models;
+using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications;
 using MediatR;
 using System;
-using System.Threading;
-using System.Threading.Tasks;
+
 namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeCreateEntity
 {
     internal class FakeCreateEntityCommandHandler : AddEntityCommandHandler<FakeEntity, IFakeEntityRepository, FakeCreateEntityCommand>
     {
-        public FakeCreateEntityCommandHandler(IMediator mediator) : base(mediator)
+        public FakeCreateEntityCommandHandler(IMediator mediator, IFakeEntityRepository repository, DomainNotificationService domainNotificationService) : base(mediator, repository, domainNotificationService)
         {
         }
 
-        public override Task<CommandResult<Guid>> ExecuteAsync(FakeCreateEntityCommand request, CancellationToken cancellationToken)
+        protected override FakeEntity ParseCommandToEntity(FakeCreateEntityCommand request)
         {
-            return Task.FromResult(CommandResult<Guid>.GetSuccess(Guid.Empty));
+            return new FakeEntity(Guid.NewGuid(), request.Name, request.Description);
         }
-
-        protected override EventType GetEventType() => EventType.Create;
     }
 }
