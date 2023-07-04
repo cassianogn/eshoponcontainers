@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/back/.idea/.idea.EShopOnContainers/.idea
