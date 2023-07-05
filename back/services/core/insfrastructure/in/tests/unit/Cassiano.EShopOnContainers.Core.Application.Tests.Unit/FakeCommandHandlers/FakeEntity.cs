@@ -1,7 +1,8 @@
-﻿using Cassiano.EShopOnContainers.Core.Domain.Entities;
+﻿using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeCreateEntity;
+using Cassiano.EShopOnContainers.Core.Domain.Entities;
 using System;
 
-namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeCreateEntity
+namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers
 {
     public class FakeEntity : Entity<FakeEntity>
     {
@@ -17,6 +18,12 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHand
         {
             base.SetValidationRules();
             AddDomainValidationPolicy(new FakeEntityValidation(this));
+        }
+
+        public void Update(string name, string description)
+        {
+            Name = name;
+            Description = description;
         }
     }
 }

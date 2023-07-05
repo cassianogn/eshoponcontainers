@@ -80,26 +80,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Services.Validations.Helpers
                 .WithMessage(ValidationErrorMessage.MaxLength(propertyName, length));
         }
 
-        protected void ValidarListaDependente<TEntityValidate>(Expression<Func<TEntity, IEnumerable<TEntityValidate>>> expressionListaPropriedade
-             , string nomePropriedade = ""
-             , bool listaObrigatoria = true) where TEntityValidate : IEntityWithDomainValidations<TEntityValidate>
-        {
-            nomePropriedade = GetPropertyName(expressionListaPropriedade, nomePropriedade);
-
-            if (listaObrigatoria)
-                Required(expressionListaPropriedade, nomePropriedade);
-
-            var dependentes = expressionListaPropriedade.Compile().Invoke(_entity);
-            if (dependentes == null)
-                return;
-
-            foreach (var dependente in dependentes)
-            {
-                var validadoresDependente = dependente.GetValidationStrategyPolicies();
-                foreach (var validadorDependente in validadoresDependente)
-                    _addErrorDeEntityDependente(dependente, validadorDependente);
-            }
-        }
+       
 
     }
 }

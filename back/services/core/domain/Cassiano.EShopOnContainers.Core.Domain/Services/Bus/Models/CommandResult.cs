@@ -11,7 +11,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Models
         }
 
         public TResult? Result { get; private set; }
-        public static CommandResult<TResult?> GetSuccess(TResult? result) => new(true, result, null, null);
+        public static CommandResult<TResult?> CommandFinished(TResult? result) => new(true, result, null, null);
 
     }
     public class CommandResult
@@ -25,7 +25,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Models
         public bool ProccessCompleted { get; private set; }
         public Exception? Exception { get; private set; }
 
-        public static CommandResult GetSuccess() => new (true, null, null);
+        public static CommandResult CommandFinished() => new (true, null, null);
         public static CommandResult GetExceptionError(Exception exception) => new (false, null, exception);
 
     }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus.TestBusMemory.Commands.TestBusMemoryWithReturn
 {
-    internal class TestBusMemoryWithReturnCommandHandler : BaseRequesHandler<TestBusMemoryWithReturnCommand, Guid>
+    internal class TestBusMemoryWithReturnCommandHandler : BaseRequestHandler<TestBusMemoryWithReturnCommand, Guid>
     {
         private readonly DomainNotificationService _domainNotificationService;
 
@@ -22,7 +22,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus.TestBusMemory.Co
         public override Task<CommandResult<Guid>> ExecuteAsync(TestBusMemoryWithReturnCommand request, CancellationToken cancellationToken)
         {
             _domainNotificationService.Add("test", "the first message has proccess");
-            return Task.FromResult(CommandResult<Guid>.GetSuccess(Guid.NewGuid()));
+            return Task.FromResult(CommandResult<Guid>.CommandFinished(Guid.NewGuid()));
         }
 
         protected override EventType GetEventType()

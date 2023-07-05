@@ -93,7 +93,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus
         [Fact(DisplayName = "4 - Publish Infrastructure Event")]
         public async Task PublishInfrastructureEvent()
         {
-            await _bus.PublishEvent(new TestBusEvent(), default, BusTransactionType.Infrastructure);
+            await _bus.PublishEvent(new TestBusEvent(), BusTransactionType.Infrastructure, default);
 
             var hasFirstExecution = _domainNotificationService.GetAll().FirstOrDefault(notification => notification.Code == "testinfra");
             Assert.NotNull(hasFirstExecution);
@@ -103,7 +103,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus
         [Fact(DisplayName = "5 - Send Without Return Infrastructure Message")]
         public async Task SendWithoutReturnInfrastructureMessage()
         {
-            var result = await _bus.SendMessage(new TestBusInfraWithoutReturnCommand(), default, BusTransactionType.Infrastructure);
+            var result = await _bus.SendMessage(new TestBusInfraWithoutReturnCommand(), BusTransactionType.Infrastructure, default);
 
             var hasFirstExecution = _domainNotificationService.GetAll().FirstOrDefault(notification => notification.Code == "testinfra");
 
@@ -115,7 +115,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus
         [Fact(DisplayName = "6 - Send With Return Infrastructure Message")]
         public async Task SendWithReturnInfrastructureMessage()
         {
-            var result = await _bus.SendMessage<TestBusInfraWithReturnCommand, Guid>(new TestBusInfraWithReturnCommand(), default, BusTransactionType.Infrastructure);
+            var result = await _bus.SendMessage<TestBusInfraWithReturnCommand, Guid>(new TestBusInfraWithReturnCommand(), BusTransactionType.Infrastructure, default);
 
             var hasFirstExecution = _domainNotificationService.GetAll().FirstOrDefault(notification => notification.Code == "testinfra");
 

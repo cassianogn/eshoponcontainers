@@ -34,13 +34,13 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Bases
         protected abstract EventType GetEventType();
     }
 
-    public abstract class BaseRequesHandler<TRequest, TResponse> :
+    public abstract class BaseRequestHandler<TRequest, TResponse> :
         IRequestHandler<TRequest, CommandResult<TResponse>>
         where TRequest : IRequest<CommandResult<TResponse>>, IEntityDTO
     {
         private readonly IMediator _mediator;
 
-        protected BaseRequesHandler(IMediator mediator)
+        protected BaseRequestHandler(IMediator mediator)
         {
             _mediator = mediator;
         }

@@ -15,7 +15,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.Services.EventSourcing.Sav
 
         public async Task Handle(SaveEventStoredCommand request, CancellationToken cancellationToken)
         {
-            await _busService.SendMessage(request, cancellationToken, BusTransactionType.Infrastructure);
+            await _busService.SendMessage(request, BusTransactionType.Infrastructure, cancellationToken);
         }
     }
 }

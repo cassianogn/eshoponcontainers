@@ -12,7 +12,7 @@ using MediatR;
 
 namespace Cassiano.EShopOnContainers.Core.Application.In.Commands.AddEntity
 {
-    public abstract class AddEntityCommandHandler<TEntity, TRepository, TAddCommand> : BaseRequesHandler<TAddCommand, Guid?>
+    public abstract class AddEntityCommandHandler<TEntity, TRepository, TAddCommand> : BaseRequestHandler<TAddCommand, Guid?>
         where TEntity : IEntityWithDomainValidations<TEntity>
         where TRepository : IWriterRepository<TEntity>
         where TAddCommand : IEntityDTO, IAppMessage<Guid?>
@@ -37,13 +37,13 @@ namespace Cassiano.EShopOnContainers.Core.Application.In.Commands.AddEntity
 
             await BeforeValidateTemplateMethod(entity, request, cancellationToken);
             var validationResult = await Validate(entity);
-            if (!validationResult.Valid) return CommandResult<Guid?>.GetSuccess(null);
+            if (!validationResult.Valid) return CommandResult<Guid?>.CommandFinished(null);
 
             await BeforeRegisterEntityTemplateMethod(entity, request, cancellationToken);
             await Repository.AddAsync(entity, cancellationToken);
             await AfterRegisterEntityTemplateMethod(entity, request, cancellationToken);
 
-            return CommandResult<Guid?>.GetSuccess(entity.Id);
+            return CommandResult<Guid?>.CommandFinished(entity.Id);
         }
         private async Task<ValidationStrategyResult> Validate(TEntity entity)
         {

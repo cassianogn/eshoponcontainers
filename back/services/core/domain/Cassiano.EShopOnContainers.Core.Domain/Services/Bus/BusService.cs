@@ -15,7 +15,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Services.Bus
             _infrastructureBus = infrastructureBus;
         }
 
-        public async Task PublishEvent<TData>(TData data, CancellationToken cancellationToken = default, BusTransactionType transactionType = BusTransactionType.Memory)
+        public async Task PublishEvent<TData>(TData data, BusTransactionType transactionType = BusTransactionType.Memory, CancellationToken cancellationToken = default)
             where TData : IAppEvent
         {
             switch (transactionType)
@@ -32,7 +32,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Services.Bus
 
         }
 
-        public async Task<CommandResult> SendMessage<TData>(TData data, CancellationToken cancellationToken = default, BusTransactionType transactionType = BusTransactionType.Memory)
+        public async Task<CommandResult> SendMessage<TData>(TData data, BusTransactionType transactionType = BusTransactionType.Memory, CancellationToken cancellationToken = default)
             where TData : IAppMessage
         {
             return transactionType switch
@@ -42,7 +42,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Services.Bus
                 _ => throw new Exception("Invalid transaction type"),
             };
         }
-        public async Task<CommandResult<TResponse>> SendMessage<TData, TResponse>(TData data, CancellationToken cancellationToken = default, BusTransactionType transactionType = BusTransactionType.Memory)
+        public async Task<CommandResult<TResponse>> SendMessage<TData, TResponse>(TData data, BusTransactionType transactionType = BusTransactionType.Memory, CancellationToken cancellationToken = default)
             where TData : IAppMessage<TResponse>
         {
 

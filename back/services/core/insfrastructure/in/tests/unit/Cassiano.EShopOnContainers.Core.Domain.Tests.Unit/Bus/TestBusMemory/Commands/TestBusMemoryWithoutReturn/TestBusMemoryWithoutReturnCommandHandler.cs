@@ -24,7 +24,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus.TestBusMemory.Co
             if (request.ThrowError)
                 throw new Exception("Expected Error");
 
-            return Task.FromResult(CommandResult.GetSuccess());
+            return Task.FromResult(CommandResult.CommandFinished());
         }
 
         protected override EventType GetEventType()
