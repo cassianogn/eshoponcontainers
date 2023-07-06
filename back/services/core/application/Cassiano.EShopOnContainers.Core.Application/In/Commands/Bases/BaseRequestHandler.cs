@@ -50,7 +50,8 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Bases
             try
             {
                 var result = await ExecuteAsync(request, cancellationToken);
-                await _mediator.Send(new OnSuccessCommand(request, GetEventType()), cancellationToken);
+                if (GetEventType() != EventType.Query)
+                    await _mediator.Send(new OnSuccessCommand(request, GetEventType()), cancellationToken);
                 return result;
             }
             catch (Exception error)

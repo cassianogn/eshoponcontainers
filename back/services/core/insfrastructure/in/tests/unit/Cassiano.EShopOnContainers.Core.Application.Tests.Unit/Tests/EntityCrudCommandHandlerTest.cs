@@ -1,6 +1,7 @@
 ﻿using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers;
 using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeCreateEntity;
 using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeDeleteEntity;
+using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeGetEntityById;
 using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeUpdateEntity;
 using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.Fakes;
 using Cassiano.EShopOnContainers.Core.Domain.Services.Bus;
@@ -84,8 +85,8 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.Tests
 
 
 
-        [Fact(DisplayName = "4 - Delete entity")]
         [Trait("Categoria", "BaseCommandHandler")]
+        [Fact(DisplayName = "4 - Delete entity")]
         public async Task DeleteEntityComandHandler_SuccessAsync()
         {
             // arange
@@ -101,26 +102,22 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.Tests
             Assert.True(commandResult.ProccessCompleted);
             Assert.False(HasNotifications());
         }
-        //[Fact(DisplayName = "get entity by id")]
-        //    public async Task DeleteEntityComandHandler_NewEntity_SuccessAsync()
-        //    {
-        //        // arange
-        //        var scope = GetScope();
-        //        var domainNotification = scope.GetRequiredService<DomainNotificationService>;
-        //        var handler = scope.GetRequiredService<FakeGetEntityByIdQueryHandler>;
-        //        var fakeEntityDTO = new FakeGetEntityByIdQuery()
-        //        {
-        //            EntityId = handleEntity.Id
-        //        };
+        [Trait("Categoria", "BaseCommandHandler")]
+        [Fact(DisplayName = "5 - Get entity by id")]
+        public async Task DeleteEntityComandHandler_NewEntity_SuccessAsync()
+        {
+            // arange
+            var fakeEntityDTO = new FakeGetEntityByIdQuery()
+            {
+                Id = Guid.NewGuid()
+            };
 
-        //        //act
-        //        var searchedEntity = await handler.ExecuteAsync(fakeEntityDTO);
+            //act
+            var commandResult = await _bus.SendMessage<FakeGetEntityByIdQuery, FakeGetEntityByIdViewModel?>(fakeEntityDTO);
 
-
-        //        // assert
-        //        Assert.Equal(searchedEntity.Id, fakeEntityDTO.EntityId);
-        //        Assert.Equal(searchedEntity.Name, handleEntity.Name);
-        //    }
+            // assert
+            Assert.True(commandResult.ProccessCompleted);
+        }
 
 
         private IEnumerable<Notification> GetNotifications()
