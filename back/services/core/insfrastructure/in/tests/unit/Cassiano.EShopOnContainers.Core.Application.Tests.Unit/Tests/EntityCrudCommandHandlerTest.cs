@@ -1,5 +1,6 @@
 ﻿using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers;
 using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeCreateEntity;
+using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeDeleteEntity;
 using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeUpdateEntity;
 using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.Fakes;
 using Cassiano.EShopOnContainers.Core.Domain.Services.Bus;
@@ -65,7 +66,6 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.Tests
         public async Task UpdateEntityComandHandler_SuccessAsync()
         {
             // arange
-
             var fakeEntityDTO = new FakeUpdateEntityCommand()
             {
                 Id = Guid.NewGuid(),
@@ -80,10 +80,27 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.Tests
             Assert.False(HasNotifications());
         }
 
+        //unit test to class FakeEntity
 
 
 
+        [Fact(DisplayName = "4 - Delete entity")]
+        [Trait("Categoria", "BaseCommandHandler")]
+        public async Task DeleteEntityComandHandler_SuccessAsync()
+        {
+            // arange
+            var fakeEntityDTO = new FakeDeleteEntityCommand()
+            {
+                Id = Guid.NewGuid()
+            };
 
+            //act
+            var commandResult = await _bus.SendMessage(fakeEntityDTO);
+
+            // assert
+            Assert.True(commandResult.ProccessCompleted);
+            Assert.False(HasNotifications());
+        }
         //[Fact(DisplayName = "get entity by id")]
         //    public async Task DeleteEntityComandHandler_NewEntity_SuccessAsync()
         //    {
@@ -106,24 +123,6 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.Tests
         //    }
 
 
-        //[Fact(DisplayName = "Delete entity")]
-        //public async Task DeleteEntityComandHandler_NewEntity_SuccessAsync()
-        //{
-        //    // arange
-        //    var scope = GetScope();
-        //    var domainNotification = scope.GetRequiredService<DomainNotificationService>;
-        //    var handler = scope.GetRequiredService<FakeDeleteEntityCommandHandler>;
-        //    var fakeEntityDTO = new FakeDeleteEntityCommand()
-        //    {
-        //        EntityId = handleEntity.Id
-        //    };
-
-        //    //act
-        //    await handler.ExecuteAsync(fakeEntityDTO);
-
-        //    // assert
-        //    Assert.NotEmpty(domainNotification.Notifications);
-        //}
         private IEnumerable<Notification> GetNotifications()
         {
             return _domainNotificationService.GetAll().Where(notification => notification.Code != "testinfra");

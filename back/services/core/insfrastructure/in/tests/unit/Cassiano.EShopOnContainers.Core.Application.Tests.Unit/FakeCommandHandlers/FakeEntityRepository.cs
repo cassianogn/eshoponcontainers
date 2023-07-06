@@ -26,7 +26,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHand
         }
 
         public Task AddAsync(FakeEntity entity, CancellationToken cancellationToken = default) => Task.CompletedTask;    
-        public Task DeleteAsync(FakeEntity entity, CancellationToken cancellationToken = default) => Task.CompletedTask;
+        public Task DeleteAsync(Guid id, CancellationToken cancellationToken = default) => Task.CompletedTask;
         public Task UpdateAsync(FakeEntity entity, CancellationToken cancellationToken = default) => Task.CompletedTask;
     }
 }
