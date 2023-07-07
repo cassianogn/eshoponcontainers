@@ -6,6 +6,6 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Interfaces.Repositories
     {
         Task AddAsync(TEntity entity, CancellationToken cancellationToken = default);
         Task UpdateAsync(TEntity entity, CancellationToken cancellationToken = default);
-        Task DeleteAsync(Guid entity, CancellationToken cancellationToken = default);
+        Task DeleteAsync(Guid id, CancellationToken cancellationToken = default);
     }
 }

@@ -57,7 +57,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.Tests
             {
                 Name = "test",
             };
-            var commandResult = await _bus.SendMessage<FakeCreateEntityCommand, Guid?>(command);
+            var commandResult = await _bus.SendMessage<FakeCreateEntityCommand, Guid?>(command, BusTransactionType.Infrastructure);
             Assert.Null(commandResult.Result);
             Assert.True(HasNotifications());
         }

@@ -1,5 +1,4 @@
-﻿using Cassiano.EShopOnContainers.Core.Domain.Interfaces.Entities;
-using Cassiano.EShopOnContainers.Core.Domain.ValueObject;
+﻿using Cassiano.EShopOnContainers.Core.Domain.ValueObject;
 
 namespace Cassiano.EShopOnContainers.Core.Domain.Entities
 {
@@ -7,9 +6,9 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Entities
     {
         protected NamedEntity(Guid id, string name) : base(id)
         {
-            Name = new NameVO(name);
+            Name = new SearchableStringVO(name);
         }
 
-        public NameVO Name { get; private set; }
+        public SearchableStringVO Name { get; private set; }
     }
 }

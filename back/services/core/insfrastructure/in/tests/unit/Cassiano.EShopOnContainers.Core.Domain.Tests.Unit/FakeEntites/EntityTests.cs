@@ -38,7 +38,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.FakeEntites
             var entity = new FakeNamedEntity(entityId, name);
 
             // assert
-            Assert.Equal("Cassiano", entity.Name.DisplayName);
+            Assert.Equal("Cassiano", entity.Name.Value);
         }
     }
 }

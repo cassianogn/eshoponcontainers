@@ -17,9 +17,10 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Entities
         }
 
         public Guid Id { get; private set; }
-        public bool Deleted { get; private set; }
         public DateTime CreationDate { get; private set; }
-        
+        public bool Deleted { get; private set; }
+        public DateTime DeletedDate { get; private set; }
+
         protected void AddDomainValidationPolicy(IValidationStrategyPolicy<TEntity> validationStrategyPolicy) => _validationStrategyPolicies.Add(validationStrategyPolicy);
 
         public IEnumerable<IValidationStrategyPolicy<TEntity>> GetValidationStrategyPolicies()
@@ -33,6 +34,10 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Entities
             AddDomainValidationPolicy(new EntityValidationStrategyPolicy<TEntity>((TEntity)this));
         }
 
-
+        public void SetAsDeleted()
+        {
+            Deleted = true;
+            DeletedDate = DateTime.UtcNow;
+        }
     }
 }
