@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -22,9 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\application\Cassiano.EShopOnContainers.Core.Application\Cassiano.EShopOnContainers.Core.Application.csproj" />
-    <ProjectReference Include="..\..\..\..\..\domain\Cassiano.EShopOnContainers.Core.Domain\Cassiano.EShopOnContainers.Core.Domain.csproj" />
-    <ProjectReference Include="..\Cassiano.EShopOnContainers.Core.Application.Tests.Unit\Cassiano.EShopOnContainers.Core.Application.Tests.Unit.csproj" />
+    <ProjectReference Include="..\..\..\..\application\Cassiano.EShopOnContainers.Core.Application\Cassiano.EShopOnContainers.Core.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\domain\Cassiano.EShopOnContainers.Core.Domain\Cassiano.EShopOnContainers.Core.Domain.csproj" />
+    <ProjectReference Include="..\Cassiano.EShopOnContainers.Core.Application.Tests.Integration\Cassiano.EShopOnContainers.Core.Application.Tests.Integration.csproj" />
   </ItemGroup>
 
 </Project>

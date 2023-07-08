@@ -7,7 +7,7 @@ namespace Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess.FluentApi.
 {
     public class EntityFA<TEntity> : IEntityTypeConfiguration<TEntity> where TEntity : Entity<TEntity>
     {
-        protected readonly int MAX_LENGTH_PADRAO_DB = CoreConstants.MAX_LEN;
+        protected readonly int MAX_LENGTH_DEFAULT = CoreConstants.MAX_LEN;
         public virtual void Configure(EntityTypeBuilder<TEntity> builder)
         {
             var tableName = typeof(TEntity).ToString().Split('.').Last();

@@ -11,7 +11,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHand
 
         public Task<FakeEntity> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            return Task.FromResult(new FakeEntity(id, "FakeEntity", "FakeEntity"));
+            return Task.FromResult(new FakeEntity(id, "name", "FakeEntity", "FakeEntity"));
         }
 
      

@@ -12,9 +12,9 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHand
         {
             IsRequired((entityValidate) => entityValidate.Id);
 
-            IsRequired((entityValidate) => entityValidate.Name);
-            MaxLength((entityValidate) => entityValidate.Name);
-            MinLength((entityValidate) => entityValidate.Name);
+            IsRequired((entityValidate) => entityValidate.SubName);
+            MaxLength((entityValidate) => entityValidate.SubName);
+            MinLength((entityValidate) => entityValidate.SubName);
 
             IsRequired((entityValidate) => entityValidate.Description);
             MaxLength((entityValidate) => entityValidate.Description);

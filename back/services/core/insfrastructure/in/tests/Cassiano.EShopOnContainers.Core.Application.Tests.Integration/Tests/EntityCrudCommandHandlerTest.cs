@@ -1,4 +1,5 @@
-﻿using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers;
+﻿using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.DbAccess.DbConnection;
+using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers;
 using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeCreateEntity;
 using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeDeleteEntity;
 using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeGetEntityById;
@@ -7,6 +8,7 @@ using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.Fakes;
 using Cassiano.EShopOnContainers.Core.Domain.Services.Bus;
 using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications;
 using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -27,6 +29,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.Tests
             var services = new ServiceCollection();
 
             services.AddCoreApplication<FakeInfrastructureBus>(new List<Assembly>() { typeof(EntityCrudCommandHandlerTest).Assembly });
+            services.AddDbContext<TestDb>(options => options.UseSqlServer("Server=localhost;Database=IoutilityCadastro; User Id=SA; password=yourStrong(!)Password"));
             services.AddScoped<IFakeEntityRepository, FakeEntityRepository>();
             var providers = services.BuildServiceProvider();
 

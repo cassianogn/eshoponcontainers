@@ -1,17 +1,17 @@
-﻿using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeCreateEntity;
-using Cassiano.EShopOnContainers.Core.Domain.Entities;
+﻿using Cassiano.EShopOnContainers.Core.Domain.Entities;
+using Cassiano.EShopOnContainers.Core.Domain.Interfaces.Entities;
 using System;
 
 namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers
 {
-    public class FakeEntity : Entity<FakeEntity>
+    public class FakeEntity : NamedEntity<FakeEntity>, INamedEntity
     {
-        public FakeEntity(Guid id, string name, string description) : base(id)
+        public FakeEntity(Guid id, string name, string subname, string description) : base(id, name)
         {
-            Name = name;
+            SubName = subname;
             Description = description;
         }
-        public string Name { get; private set; }
+        public string SubName { get; private set; }
         public string Description { get; private set; }
 
         protected override void SetValidationRules()
@@ -20,9 +20,9 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHand
             AddDomainValidationPolicy(new FakeEntityValidation(this));
         }
 
-        public void Update(string name, string description)
+        public void Update(string subname, string description)
         {
-            Name = name;
+            SubName = subname;
             Description = description;
         }
     }

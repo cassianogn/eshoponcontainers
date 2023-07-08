@@ -15,7 +15,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHand
             {
                 Description = entity.Description,
                 Id = entity.Id, 
-                Name = entity.Name
+                Name = entity.SubName
             };
         }
     }

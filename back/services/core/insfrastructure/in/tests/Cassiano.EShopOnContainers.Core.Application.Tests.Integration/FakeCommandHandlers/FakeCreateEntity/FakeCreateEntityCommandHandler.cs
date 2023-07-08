@@ -13,7 +13,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHand
 
         protected override FakeEntity ParseCommandToEntity(FakeCreateEntityCommand request)
         {
-            return new FakeEntity(Guid.NewGuid(), request.Name, request.Description);
+            return new FakeEntity(Guid.NewGuid(), "name", request.Name, request.Description);
         }
     }
 }
