@@ -6,6 +6,9 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHand
 {
     public class FakeEntity : NamedEntity<FakeEntity>, INamedEntity
     {
+        private FakeEntity() 
+        {
+        }
         public FakeEntity(Guid id, string name, string subname, string description) : base(id, name)
         {
             SubName = subname;

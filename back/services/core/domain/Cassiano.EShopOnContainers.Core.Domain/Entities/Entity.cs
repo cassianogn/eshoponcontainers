@@ -7,7 +7,10 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Entities
     public abstract class Entity<TEntity> : IEntityWithDomainValidations<TEntity> where TEntity : Entity<TEntity>, IEntity
     {
         private readonly List<IValidationStrategyPolicy<TEntity>> _validationStrategyPolicies = new();
+        protected Entity()
+        {
 
+        }
         protected Entity(Guid id)
         {
             Id = id;

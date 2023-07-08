@@ -1,12 +1,14 @@
 ﻿using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.DbAccess.FakeEntities;
 using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using System.IO;
 
 namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.DbAccess.DbConnection
 {
     public class TestDb : DbContext
     {
-        public TestDb(DbContextOptions<TestDb> options) : base(options)
+        public TestDb() 
         {
         }
 
@@ -15,7 +17,24 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastr
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new FakeEntityFA());
+
             base.OnModelCreating(modelBuilder);
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var configuration = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+
+            var connectionString = configuration
+                        .GetConnectionString("DefaultConnection");
+
+            optionsBuilder.UseSqlServer(connectionString);
+
+            base.OnConfiguring(optionsBuilder);
+        }
+
     }
 }

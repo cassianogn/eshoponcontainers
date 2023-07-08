@@ -29,7 +29,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.Tests
             var services = new ServiceCollection();
 
             services.AddCoreApplication<FakeInfrastructureBus>(new List<Assembly>() { typeof(EntityCrudCommandHandlerTest).Assembly });
-            services.AddDbContext<TestDb>(options => options.UseSqlServer("Server=localhost;Database=IoutilityCadastro; User Id=SA; password=yourStrong(!)Password"));
+            services.AddDbContext<TestDb>();
             services.AddScoped<IFakeEntityRepository, FakeEntityRepository>();
             var providers = services.BuildServiceProvider();
 

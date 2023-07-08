@@ -1,36 +1,14 @@
-﻿using Cassiano.EShopOnContainers.Core.Domain.DTOs.Entities;
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.DbAccess.DbConnection;
+using Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers
 {
-    public class FakeEntityRepository : IFakeEntityRepository
+    public class FakeEntityRepository : NamedEntityRepository<FakeEntity>, IFakeEntityRepository
     {
-
-        public Task<FakeEntity> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
+        public FakeEntityRepository(TestDb dbContext) : base(dbContext)
         {
-            return Task.FromResult(new FakeEntity(id, "name", "FakeEntity", "FakeEntity"));
         }
 
-     
-        public Task AddAsync(FakeEntity entity, CancellationToken cancellationToken = default) => Task.CompletedTask;    
-        public Task DeleteAsync(Guid id, CancellationToken cancellationToken = default) => Task.CompletedTask;
-        public Task UpdateAsync(FakeEntity entity, CancellationToken cancellationToken = default) => Task.CompletedTask;
-
-        public Task<IEnumerable<NamedEntityDTO>> SearchByKeywordAsync(string searchKey, CancellationToken cancellationToken = default)
-        {
-
-            var fakeEntities = new List<NamedEntityDTO>
-            {
-                new NamedEntityDTO() { Id = Guid.NewGuid(), Name = "FakeEntity1" }, 
-                new NamedEntityDTO() { Id = Guid.NewGuid(), Name = "FakeEntity2" },
-                new NamedEntityDTO() { Id = Guid.NewGuid(), Name = "FakeEntity3" }
-            };
-
-            return Task.FromResult(fakeEntities as IEnumerable<NamedEntityDTO>);
-
-        }
     }
 }
