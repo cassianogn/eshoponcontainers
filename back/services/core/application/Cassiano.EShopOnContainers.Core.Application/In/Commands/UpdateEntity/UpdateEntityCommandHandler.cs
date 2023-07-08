@@ -33,7 +33,8 @@ namespace Cassiano.EShopOnContainers.Core.Application.In.Commands.UpdateEntity
 
         public override async Task<CommandResult> ExecuteAsync(TUpdateCommand request, CancellationToken cancellationToken)
         {
-            TEntity entity = await Repository.GetByIdAsync(request.Id, cancellationToken);
+            TEntity entity = await Repository.GetByIdAsync(request.Id, cancellationToken) ?? throw new Exception($"Entity {typeof(TEntity).Name} with id {request.Id} not found to update");
+
             SetUpdateDataInEntity(entity, request);
 
             await BeforeValidateTemplateMethod(entity, request, cancellationToken);
