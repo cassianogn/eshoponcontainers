@@ -6,7 +6,6 @@ using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers
 using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeDeleteEntity;
 using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeGetEntityById;
 using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers.FakeUpdateEntity;
-using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.Fakes;
 using Cassiano.EShopOnContainers.Core.Domain.Services.Bus;
 using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications;
 using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications.Models;
@@ -32,12 +31,8 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.FakeComm
 
         public EntityCrudCommandHandlerTest(FakeEntityHandlerFixture fixture)
         {
-            var services = new ServiceCollection();
-            services.AddCoreApplication<FakeInfrastructureBus>(new List<Assembly>() { typeof(EntityCrudCommandHandlerTest).Assembly });
-            services.AddDbContext<TestDb>();
-            services.AddScoped<IFakeEntityRepository, FakeEntityRepository>();
-            var providers = services.BuildServiceProvider();
 
+            var providers = TestsServiceProvider.GetServiceProvider();
             _bus = providers.GetRequiredService<BusService>();
             _domainNotificationService = providers.GetRequiredService<DomainNotificationService>();
             _repository = providers.GetRequiredService<IFakeEntityRepository>();
@@ -46,7 +41,6 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.FakeComm
 
         [Trait("Categoria", "1 - BaseCommandHandler"), TestPriority(1.1)]
         [Fact(DisplayName = "1 - AddEntity Success")]
-
         public async Task CreateEntityComandHandler_NewEntity_Success()
         {
             var command = new FakeCreateEntityCommand()

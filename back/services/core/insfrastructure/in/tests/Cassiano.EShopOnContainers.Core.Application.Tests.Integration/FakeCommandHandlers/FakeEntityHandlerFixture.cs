@@ -1,7 +1,7 @@
 ﻿using Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHandlers;
 using Xunit;
 
-namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Core
+namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.FakeCommandHandlers
 {
     [CollectionDefinition(nameof(FakeEntityHandlerCollection))]
     public class FakeEntityHandlerCollection : ICollectionFixture<FakeEntityHandlerFixture>
