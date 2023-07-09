@@ -42,7 +42,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cassiano.EShopOnContainers.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cassiano.EShopOnContainers.Core.Application.Tests.Integration", "services\core\insfrastructure\in\tests\Cassiano.EShopOnContainers.Core.Application.Tests.Integration\Cassiano.EShopOnContainers.Core.Application.Tests.Integration.csproj", "{77F4F9B3-1D39-4B52-9E46-745E00652B2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarterProject", "services\core\insfrastructure\in\tests\StarterProject\StarterProject.csproj", "{73EAA48A-8589-4F0E-BB9E-D210041205E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarterProject", "services\core\insfrastructure\in\tests\StarterProject\StarterProject.csproj", "{73EAA48A-8589-4F0E-BB9E-D210041205E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cassiano.EShopOnContainers.Core.Infrastructure.In.Http", "services\core\insfrastructure\in\Cassiano.EShopOnContainers.Core.Infrastructure.In.Http\Cassiano.EShopOnContainers.Core.Infrastructure.In.Http.csproj", "{3036BF40-2F5D-417C-A0B0-D188279373DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -78,6 +80,10 @@ Global
 		{73EAA48A-8589-4F0E-BB9E-D210041205E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73EAA48A-8589-4F0E-BB9E-D210041205E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73EAA48A-8589-4F0E-BB9E-D210041205E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3036BF40-2F5D-417C-A0B0-D188279373DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3036BF40-2F5D-417C-A0B0-D188279373DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3036BF40-2F5D-417C-A0B0-D188279373DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3036BF40-2F5D-417C-A0B0-D188279373DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,6 +105,7 @@ Global
 		{6AD3F702-E86A-4CBC-96B2-471CCD89875A} = {21D54363-AD53-4E76-85FF-7A3AB25554D5}
 		{77F4F9B3-1D39-4B52-9E46-745E00652B2C} = {21D54363-AD53-4E76-85FF-7A3AB25554D5}
 		{73EAA48A-8589-4F0E-BB9E-D210041205E2} = {21D54363-AD53-4E76-85FF-7A3AB25554D5}
+		{3036BF40-2F5D-417C-A0B0-D188279373DE} = {66669B40-B3B8-43CA-BA5D-F1E67F580E09}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD0BFF79-B832-489C-8822-2D5AC77A0FE4}

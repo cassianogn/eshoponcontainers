@@ -9,7 +9,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Unit.FakeCommandHand
         {
         }
 
-        protected override FakeGetEntityByIdViewModel? MapEntityToViewModel(FakeEntity entity)
+        protected override FakeGetEntityByIdViewModel MapEntityToViewModel(FakeEntity entity)
         {
             return new FakeGetEntityByIdViewModel()
             {

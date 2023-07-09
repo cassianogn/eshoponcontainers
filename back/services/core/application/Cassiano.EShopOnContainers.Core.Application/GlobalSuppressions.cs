@@ -4,5 +4,3 @@
 // a specific target and scoped to a namespace, type, member, etc.
 
 using System.Diagnostics.CodeAnalysis;
-
-[assembly: SuppressMessage("Major Code Smell", "S112:General exceptions should never be thrown", Justification = "<Pendente>", Scope = "member", Target = "~M:Cassiano.EShopOnContainers.Core.Application.In.Commands.UpdateEntity.UpdateEntityCommandHandler`3.ExecuteAsync(`2,System.Threading.CancellationToken)~System.Threading.Tasks.Task{Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Models.CommandResult}")]

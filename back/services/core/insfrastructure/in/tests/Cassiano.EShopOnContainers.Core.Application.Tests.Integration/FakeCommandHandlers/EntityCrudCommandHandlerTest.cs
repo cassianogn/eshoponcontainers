@@ -19,7 +19,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests
+namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.FakeCommandHandlers
 {
     [TestCaseOrderer("Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Configs.Orders.PriorityOrderer", "Cassiano.EShopOnContainers.Core.Application.Tests.Integration")]
     [Collection(nameof(FakeEntityHandlerCollection))]
@@ -87,7 +87,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests
             };
 
             //act
-            var commandResult = await _bus.SendMessage<FakeGetEntityByIdQuery, FakeGetEntityByIdViewModel?>(fakeEntityDTO);
+            var commandResult = await _bus.SendMessage<FakeGetEntityByIdQuery, FakeGetEntityByIdViewModel>(fakeEntityDTO);
 
             // assert
             Assert.True(commandResult.ProccessCompleted);
@@ -149,8 +149,8 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests
             // assert
             Assert.Contains("not found to update", exception.InnerException!.Message);
         }
-        
-        
+
+
         //unit test to class FakeEntity
         [Trait("Categoria", "1 - BaseCommandHandler")]
         [Fact(DisplayName = "7 - Delete entity"), TestPriority(1.9)]
@@ -171,7 +171,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests
             Assert.False(HasNotifications());
             Assert.Null(deletedEntity);
         }
-        
+
 
 
         private IEnumerable<Notification> GetNotifications()

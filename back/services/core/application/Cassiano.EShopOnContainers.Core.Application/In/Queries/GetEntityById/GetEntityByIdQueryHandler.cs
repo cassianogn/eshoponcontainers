@@ -9,24 +9,28 @@ using MediatR;
 
 namespace Cassiano.EShopOnContainers.Core.Application.In.Queries.GetEntityById
 {
-    public abstract class GetEntityByIdQueryHandler<TEntity, TRepository, TQuery, TViewModel> : BaseRequestHandler<TQuery, TViewModel?>
+    public abstract class GetEntityByIdQueryHandler<TEntity, TRepository, TQuery, TViewModel> : BaseRequestHandler<TQuery, TViewModel>
         where TEntity : IEntity
         where TRepository : IReaderRepository<TEntity>
-        where TQuery : IEntityDTO, IAppMessage<TViewModel?>
+        where TQuery : IEntityDTO, IAppMessage<TViewModel>
 
     {
         protected readonly TRepository Repository;
 
-        public GetEntityByIdQueryHandler(IMediator mediator, TRepository repository) : base(mediator)
+        protected GetEntityByIdQueryHandler(IMediator mediator, TRepository repository) : base(mediator)
         {
             Repository = repository;
         }
 
-        public override async Task<CommandResult<TViewModel?>> ExecuteAsync(TQuery request, CancellationToken cancellationToken)
+        public override async Task<CommandResult<TViewModel>> ExecuteAsync(TQuery request, CancellationToken cancellationToken)
         {
             var entity = await Repository.GetByIdAsync(request.Id, cancellationToken);
+
+            if (entity == null)
+                throw new Exception($"Entity {typeof(TEntity).Name} with id {request.Id} not found on GetEntityByIdQueryHandler");
+
             var entityViewModel = MapEntityToViewModel(entity);
-            return CommandResult<TViewModel?>.CommandFinished(entityViewModel);
+            return CommandResult<TViewModel>.CommandFinished(entityViewModel!);
         }
 
         protected abstract TViewModel? MapEntityToViewModel(TEntity entity);

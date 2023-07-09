@@ -1,6 +1,7 @@
 ﻿using Cassiano.EShopOnContainers.Core.Application.Services.EventSourcing.OnError;
 using Cassiano.EShopOnContainers.Core.Application.Services.EventSourcing.OnSuccess;
 using Cassiano.EShopOnContainers.Core.Domain.EventSourcing;
+using Cassiano.EShopOnContainers.Core.Domain.Helpers.Exceptions;
 using Cassiano.EShopOnContainers.Core.Domain.Interfaces.DTOs;
 using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Models;
 using MediatR;
@@ -57,7 +58,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Bases
             catch (Exception error)
             {
                 await _mediator.Send(new OnErrorCommand(request, GetEventType(), error), cancellationToken);
-                throw new Exception("Error on execute command", error);
+                throw new ApplicationCoreException("Error on execute command", error);
             }
         }
         public abstract Task<CommandResult<TResponse>> ExecuteAsync(TRequest request, CancellationToken cancellationToken);

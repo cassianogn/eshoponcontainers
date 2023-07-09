@@ -11,7 +11,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Models
         }
 
         public TResult? Result { get; private set; }
-        public static CommandResult<TResult?> CommandFinished(TResult? result) => new(true, result, null, null);
+        public static CommandResult<TResult> CommandFinished(TResult result) => new(true, result, null, null);
 
     }
     public class CommandResult
