@@ -4,6 +4,7 @@ using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructu
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Migrations
 {
     [DbContext(typeof(TestDb))]
-    partial class TestDbModelSnapshot : ModelSnapshot
+    [Migration("20230711014325_RemoveSubName")]
+    partial class RemoveSubName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

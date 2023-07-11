@@ -13,6 +13,6 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Entities
             Name = new SearchableStringVO(name);
         }
 
-        public SearchableStringVO Name { get; private set; }
+        public SearchableStringVO Name { get; protected set; }
     }
 }

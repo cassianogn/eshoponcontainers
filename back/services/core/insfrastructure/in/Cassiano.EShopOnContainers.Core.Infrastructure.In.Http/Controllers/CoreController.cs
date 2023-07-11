@@ -16,7 +16,7 @@ namespace Cassiano.EShopOnContainers.Core.Infrastructure.In.Http.Controllers
             HttpAuthService = new HttpAuthService(GetAuthParameters(), usuarioHttpRequest);
         }
 
-        public abstract HttpAuthParameters GetAuthParameters();
+        protected abstract HttpAuthParameters GetAuthParameters();
 
         protected bool HasAuthorizationToRead() => HttpAuthService.HasAuthorizationToRead();
         protected bool HasAuthorizationToAdd() => HttpAuthService.HasAuthorizationToAdd();
@@ -26,7 +26,7 @@ namespace Cassiano.EShopOnContainers.Core.Infrastructure.In.Http.Controllers
         protected bool IsValidOperation() => !DomainNotificationService.HasNotification();
         protected IActionResult ResponseCareErrors(Func<IActionResult> responseData)
         {
-            if (IsValidOperation())
+            if (!IsValidOperation())
                 return BadRequest(DomainNotificationService.GetAll());
 
             return responseData.Invoke();

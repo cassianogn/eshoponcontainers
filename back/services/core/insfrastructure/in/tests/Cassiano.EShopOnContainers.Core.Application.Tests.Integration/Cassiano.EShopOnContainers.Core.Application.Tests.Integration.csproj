@@ -38,15 +38,12 @@
 	  <ProjectReference Include="..\..\..\..\application\Cassiano.EShopOnContainers.Core.Application\Cassiano.EShopOnContainers.Core.Application.csproj" />
 	  <ProjectReference Include="..\..\..\..\domain\Cassiano.EShopOnContainers.Core.Domain\Cassiano.EShopOnContainers.Core.Domain.csproj" />
 	  <ProjectReference Include="..\..\..\out\Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess\Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess.csproj" />
+	  <ProjectReference Include="..\..\Cassiano.EShopOnContainers.Core.Infrastructure.In.Http\Cassiano.EShopOnContainers.Core.Infrastructure.In.Http.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <None Update="appsettings.json">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Tests\" />
 	</ItemGroup>
 </Project>

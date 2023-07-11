@@ -28,7 +28,12 @@ namespace Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess.Repository
         public abstract Task<IEnumerable<NamedEntityDTO>> SearchByKeywordAsync(string searchKey, CancellationToken cancellationToken = default);
         public async Task AddAsync(TEntity entity, CancellationToken cancellationToken = default)
         {
-            _dbSet.Add(entity);
+            await _dbSet.AddAsync(entity);
+            await DbContext.SaveChangesAsync(cancellationToken);
+        }
+        public async Task AddRangeAsync(IEnumerable<TEntity> entity, CancellationToken cancellationToken = default)
+        {
+            await _dbSet.AddRangeAsync(entity);
             await DbContext.SaveChangesAsync(cancellationToken);
         }
         public async Task UpdateAsync(TEntity entity, CancellationToken cancellationToken = default)

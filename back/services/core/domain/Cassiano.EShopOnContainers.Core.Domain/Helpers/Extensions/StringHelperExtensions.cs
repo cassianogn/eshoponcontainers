@@ -12,6 +12,8 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Helpers.Extensions
     {
         public static string ToSerachable(this string value)
         {
+            if (string.IsNullOrEmpty(value))
+                return value;
             var formatValue = value.ToLower().RemoveAccent().Trim().RemoveUnnecessarySpace();
 
             return formatValue;
