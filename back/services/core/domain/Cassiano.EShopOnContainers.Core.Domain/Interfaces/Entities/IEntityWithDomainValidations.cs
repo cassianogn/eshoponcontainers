@@ -2,8 +2,7 @@
 
 namespace Cassiano.EShopOnContainers.Core.Domain.Interfaces.Entities
 {
-    public interface IEntityWithDomainValidations<TEntity> : IEntity where TEntity : IEntity
+    public interface IEntityWithDomainValidations<TEntity> : IEntity, IClassWithDomainValidations<TEntity> where TEntity : IEntity
     {
-        IEnumerable<IValidationStrategyPolicy<TEntity>> GetValidationStrategyPolicies();
     }
 }

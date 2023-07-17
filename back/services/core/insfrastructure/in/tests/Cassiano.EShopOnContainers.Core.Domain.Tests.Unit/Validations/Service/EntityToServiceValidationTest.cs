@@ -1,12 +1,12 @@
 ﻿using Cassiano.EShopOnContainers.Core.Domain.Entities;
-using Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.Policies;
+using Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.Service.Policies;
 using System;
 
-namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations
+namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.Service
 {
-    public class EntityToValidationTest : Entity<EntityToValidationTest>
+    public class EntityToServiceValidationTest : Entity<EntityToServiceValidationTest>
     {
-        public EntityToValidationTest(Guid id, string description, string customValue) : base(id)
+        public EntityToServiceValidationTest(Guid id, string description, string customValue) : base(id)
         {
             Description = description;
             CustomValue = customValue;
@@ -18,7 +18,6 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations
         protected override void SetValidationRules()
         {
             AddDomainValidationPolicy(new EntityValidatePorpertiesStrategyPolicy(this));
-            AddDomainValidationPolicy(new EntityValidateContainsForbbidenDescriptionStrategyPolicy());
             base.SetValidationRules();
         }
     }

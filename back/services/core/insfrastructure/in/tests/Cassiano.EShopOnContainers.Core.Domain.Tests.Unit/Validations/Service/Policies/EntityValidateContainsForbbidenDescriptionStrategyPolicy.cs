@@ -1,19 +1,16 @@
 ﻿using Cassiano.EShopOnContainers.Core.Domain.Services.Validations;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.Policies
+namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.Service.Policies
 {
-    internal class EntityValidateContainsForbbidenDescriptionStrategyPolicy : IValidationStrategyPolicy<EntityToValidationTest>
+    internal class EntityValidateContainsForbbidenDescriptionStrategyPolicy : IValidationStrategyPolicy<EntityToServiceValidationTest>
     {
         private readonly List<string> _forbbidenTerms = new() { "forbbiden term" };
         public ValidationStrategyType WhatDoWhenInvalidStateType => ValidationStrategyType.InGroupValidationResult;
 
-        public Task<ValidationStrategyPolicyResult> ValidateAsync(EntityToValidationTest entity, CancellationToken cancellationToken = default)
+        public Task<ValidationStrategyPolicyResult> ValidateAsync(EntityToServiceValidationTest entity, CancellationToken cancellationToken = default)
         {
             foreach (var forbbidenDescription in _forbbidenTerms)
             {

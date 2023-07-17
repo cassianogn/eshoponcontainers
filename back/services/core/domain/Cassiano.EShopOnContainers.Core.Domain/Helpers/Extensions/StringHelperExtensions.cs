@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
+﻿using System.Globalization;
 using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Cassiano.EShopOnContainers.Core.Domain.Helpers.Extensions
 {
@@ -21,8 +16,12 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Helpers.Extensions
 
         public static string RemoveUnnecessarySpace(this string value)
         {
-            var formatValue = value.Replace("  ", " ");
-            return formatValue;
+            do
+            {
+                value = value.Replace("  ", " ");
+            } while (value.Contains("  "));
+            
+            return value;
         }
         public static string RemoveAccent(this string value)
         {

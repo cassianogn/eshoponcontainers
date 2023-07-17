@@ -1,20 +1,20 @@
 ﻿using Cassiano.EShopOnContainers.Core.Domain.Services.Validations;
 using Cassiano.EShopOnContainers.Core.Domain.Services.Validations.Helpers;
-using Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.Policies;
+using Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.Service.Policies;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations
+namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.Service
 {
     public class ValidationStrategyTests
     {
-        private ValidationStrategyService<EntityToValidationTest> _validationStrategyService;
+        private ValidationStrategyService<EntityToServiceValidationTest> _validationStrategyService;
+        private readonly ValidationErrorMessageService _validationErrorMessageService = new ();
         public ValidationStrategyTests()
         {
-           
+
         }
         // testes para ValidationStrategyService
         [Trait("Categoria", "ValidationStrategy")]
@@ -22,12 +22,13 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations
         public async Task ValidateDomainValidationStrategyInGroup()
         {
             //arrange 
-            var entity = new EntityToValidationTest(Guid.NewGuid(), "", "forbbiden term in text test");
+            var entity = new EntityToServiceValidationTest(Guid.NewGuid(), "", "forbbiden term in text test");
             var validations = entity.GetValidationStrategyPolicies().ToList();
-            _validationStrategyService = new ValidationStrategyService<EntityToValidationTest>();
+            _validationStrategyService = new ValidationStrategyService<EntityToServiceValidationTest>();
             _validationStrategyService.AddValidationStrategyPolicies(validations);
             _validationStrategyService.AddValidationStrategyPolicy(new EntityValidateContainsTestTermStrategyPolicy());
             _validationStrategyService.AddValidationStrategyPolicy(new EntityValidateIndividualTestStrategyPolicy());
+            _validationStrategyService.AddValidationStrategyPolicy(new EntityValidateContainsForbbidenDescriptionStrategyPolicy());
 
             //action
             var result = await _validationStrategyService.ValidateAsync(entity);
@@ -35,9 +36,9 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations
             // assert
             Assert.False(result.Valid);
 
-            var domainErrors = result.PoliciesResult.SingleOrDefault(policyResult => policyResult.ErrorGroup == ValidationErrorMessage.DomainRuleErrorGroup());
+            var domainErrors = result.PoliciesResult.SingleOrDefault(policyResult => policyResult.ErrorGroup == _validationErrorMessageService.DomainRuleErrorGroup());
             Assert.NotNull(domainErrors);
-            Assert.Contains(domainErrors!.Errors, error => error == ValidationErrorMessage.Required(nameof(EntityToValidationTest.Description)));
+            Assert.Contains(domainErrors!.Errors, error => error == _validationErrorMessageService.Required(nameof(EntityToServiceValidationTest.Description)));
 
             var customError = result.PoliciesResult.SingleOrDefault(policyResult => policyResult.ErrorGroup == "custom validation");
             Assert.NotNull(customError);
@@ -55,8 +56,8 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations
         public async Task ValidateDomainValidationStrategyInIndividual()
         {
             //arrange 
-            var entity = new EntityToValidationTest(Guid.NewGuid(), "value", "value");
-            _validationStrategyService = new ValidationStrategyService<EntityToValidationTest>();
+            var entity = new EntityToServiceValidationTest(Guid.NewGuid(), "value", "value");
+            _validationStrategyService = new ValidationStrategyService<EntityToServiceValidationTest>();
             _validationStrategyService.AddValidationStrategyPolicy(new EntityValidateIndividualTestStrategyPolicy());
             _validationStrategyService.AddValidationStrategyPolicy(new EntityValidateSecundIndividualTestStrategyPolicy());
 
@@ -65,7 +66,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations
 
             // assert
             Assert.False(result.Valid);
-           
+
             var customError = result.PoliciesResult.SingleOrDefault(policyResult => policyResult.ErrorGroup == "individual execution");
             Assert.NotNull(customError);
             Assert.DoesNotContain(customError!.Errors, error => error == "this is a individual validation error 2");

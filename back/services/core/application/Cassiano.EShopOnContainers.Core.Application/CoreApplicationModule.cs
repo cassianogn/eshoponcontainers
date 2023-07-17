@@ -1,5 +1,4 @@
 ﻿using Cassiano.EShopOnContainers.Core.Domain;
-using Cassiano.EShopOnContainers.Core.Domain.Services.Bus;
 using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;

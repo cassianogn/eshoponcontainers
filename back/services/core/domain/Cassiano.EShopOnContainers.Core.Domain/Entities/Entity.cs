@@ -1,12 +1,12 @@
 ﻿using Cassiano.EShopOnContainers.Core.Domain.Entities.Validations;
 using Cassiano.EShopOnContainers.Core.Domain.Interfaces.Entities;
-using Cassiano.EShopOnContainers.Core.Domain.Services.Validations;
+using Cassiano.EShopOnContainers.Core.Domain.Services.Validations.Helpers;
 
 namespace Cassiano.EShopOnContainers.Core.Domain.Entities
 {
     public abstract class Entity<TEntity> : IEntityWithDomainValidations<TEntity> where TEntity : Entity<TEntity>, IEntity
     {
-        private readonly List<IValidationStrategyPolicy<TEntity>> _validationStrategyPolicies = new();
+        private readonly List<DomainValidationStrategyPolicy<TEntity>> _validationStrategyPolicies = new();
         protected Entity()
         {
 
@@ -24,9 +24,9 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Entities
         public bool Deleted { get; private set; }
         public DateTime DeletedDate { get; private set; }
 
-        protected void AddDomainValidationPolicy(IValidationStrategyPolicy<TEntity> validationStrategyPolicy) => _validationStrategyPolicies.Add(validationStrategyPolicy);
+        protected void AddDomainValidationPolicy(DomainValidationStrategyPolicy<TEntity> validationStrategyPolicy) => _validationStrategyPolicies.Add(validationStrategyPolicy);
 
-        public IEnumerable<IValidationStrategyPolicy<TEntity>> GetValidationStrategyPolicies()
+        public IEnumerable<DomainValidationStrategyPolicy<TEntity>> GetValidationStrategyPolicies()
         {
             if (!_validationStrategyPolicies.Any())
                 SetValidationRules();

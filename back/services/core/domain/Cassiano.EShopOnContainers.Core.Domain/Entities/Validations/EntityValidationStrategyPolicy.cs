@@ -9,7 +9,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Entities.Validations
         {
         }
 
-        protected override void SetValidationRules()
+        public override void SetValidationRules()
         {
             IsRequired((entityValidate) => entityValidate.Id);
         }

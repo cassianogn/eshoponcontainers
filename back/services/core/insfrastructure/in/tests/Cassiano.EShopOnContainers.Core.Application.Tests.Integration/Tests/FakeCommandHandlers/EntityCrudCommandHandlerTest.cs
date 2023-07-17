@@ -6,6 +6,7 @@ using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.FakeCo
 using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.FakeCommandHandlers.FakeDeleteEntity;
 using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.FakeCommandHandlers.FakeGetEntityById;
 using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.FakeCommandHandlers.FakeUpdateEntity;
+using Cassiano.EShopOnContainers.Core.Domain.Helpers.Exceptions;
 using Cassiano.EShopOnContainers.Core.Domain.Services.Bus;
 using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications;
 using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications.Models;
@@ -139,7 +140,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.Fa
             };
 
             //act
-            var exception = await Assert.ThrowsAsync<Exception>(async () => await _bus.SendMessage(fakeEntityDTO));
+            var exception = await Assert.ThrowsAsync<ApplicationCoreException>(async () => await _bus.SendMessage(fakeEntityDTO));
 
             // assert
             Assert.Contains("not found to update", exception.InnerException!.Message);

@@ -2,13 +2,13 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.Policies
+namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Validations.Service.Policies
 {
-    internal class EntityValidateContainsTestTermStrategyPolicy : IValidationStrategyPolicy<EntityToValidationTest>
+    internal class EntityValidateContainsTestTermStrategyPolicy : IValidationStrategyPolicy<EntityToServiceValidationTest>
     {
         public ValidationStrategyType WhatDoWhenInvalidStateType => ValidationStrategyType.InGroupValidationResult;
 
-        public Task<ValidationStrategyPolicyResult> ValidateAsync(EntityToValidationTest entity, CancellationToken cancellationToken = default)
+        public Task<ValidationStrategyPolicyResult> ValidateAsync(EntityToServiceValidationTest entity, CancellationToken cancellationToken = default)
         {
             if (entity.CustomValue.Contains("test"))
                 return Task.FromResult(ValidationStrategyPolicyResult.Invalid("custom validation", "the custom value contains a test term"));

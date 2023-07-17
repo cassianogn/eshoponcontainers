@@ -4,12 +4,12 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Services.Validations.Helpers.Cu
 {
     internal class GuidEmptyCustomValidation : AbstractValidator<Guid?>
     {
-        public GuidEmptyCustomValidation(string propriedade)
+        public GuidEmptyCustomValidation(string propriedade, ValidationErrorMessageService validationErrorMessageService)
         {
 
             var guidVazio = Guid.Empty;
             RuleFor(guid => guid).Must(guid => !(guid == guidVazio || guid == null))
-                .WithMessage(ValidationErrorMessage.Required(propriedade));
+                .WithMessage(validationErrorMessageService.Required(propriedade));
         }
     }
 }
