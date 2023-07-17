@@ -1,8 +1,9 @@
-﻿using Cassiano.EShopOnContainers.Core.Domain.ValueObject;
+﻿using Cassiano.EShopOnContainers.Core.Domain.Interfaces.Entities;
+using Cassiano.EShopOnContainers.Core.Domain.ValueObject;
 
 namespace Cassiano.EShopOnContainers.Core.Domain.Entities
 {
-    public abstract class NamedEntity<TEntity> : Entity<TEntity> where TEntity : Entity<TEntity>
+    public abstract class NamedEntity<TEntity> : Entity<TEntity>, INamedEntity where TEntity : Entity<TEntity>
     {
         protected NamedEntity() 
         {

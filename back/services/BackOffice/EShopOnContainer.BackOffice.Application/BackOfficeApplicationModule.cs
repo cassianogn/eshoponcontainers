@@ -8,13 +8,13 @@ namespace EShopOnContainer.BackOffice.Application
 {
     public static class BackOfficeApplicationModule
     {
-        public static void AddBackOfficeApplicationBase<TInfrastructureBusService>(IServiceCollection services)
+        public static void AddBackOfficeApplicationBase<TInfrastructureBusService>(this IServiceCollection services)
             where TInfrastructureBusService : class, IInfrastructureBusService
 
         {
             services.AddCoreApplication<TInfrastructureBusService>(new List<Assembly>() { typeof(BackOfficeApplicationModule).Assembly });
         }
-        public static void AddApplicationRepositories<TProductRepository>(IServiceCollection services)
+        public static void AddBackOfficeApplicationRepositories<TProductRepository>(this IServiceCollection services)
             where TProductRepository : class, IProductRepository
 
         {
