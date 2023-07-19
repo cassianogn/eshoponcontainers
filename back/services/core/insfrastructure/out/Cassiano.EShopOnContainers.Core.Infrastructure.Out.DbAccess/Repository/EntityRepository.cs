@@ -9,7 +9,7 @@ namespace Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess.Repository
         where TEntity : class, IEntity
     {
         protected readonly DbContext DbContext;
-        private readonly DbSet<TEntity> _dbSet;
+        protected readonly DbSet<TEntity> _dbSet;
 
         protected EntityRepository(DbContext dbContext)
         {

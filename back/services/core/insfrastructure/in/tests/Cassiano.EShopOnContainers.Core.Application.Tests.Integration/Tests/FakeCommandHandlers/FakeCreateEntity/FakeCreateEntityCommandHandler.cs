@@ -1,12 +1,8 @@
 ﻿using Cassiano.EShopOnContainers.Core.Application.In.Commands.AddEntity;
 using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Domain.FakieEntities;
 using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications;
-using Cassiano.EShopOnContainers.Core.Domain.Services.Validations;
 using MediatR;
 using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.FakeCommandHandlers.FakeCreateEntity
 {

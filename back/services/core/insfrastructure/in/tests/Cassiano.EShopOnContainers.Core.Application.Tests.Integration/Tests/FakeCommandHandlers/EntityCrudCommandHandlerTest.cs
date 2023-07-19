@@ -179,14 +179,5 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.Fa
             return GetNotifications().Any();
         }
 
-        private static IServiceProvider GetScope()
-        {
-            //var serviceProvider = new ServiceProvider(,);
-
-            // TODO: ADD dependecy
-
-            //return serviceCollection;        
-            return null;
-        }
     }
 }

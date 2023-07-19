@@ -1,9 +1,9 @@
 ﻿using Cassiano.EShopOnContainers.BackOffice.Domain.Products;
-using Cassiano.EShopOnContainers.BackOffice.Domain.Products.Contexts.Categories;
-using Cassiano.EShopOnContainers.BackOffice.Domain.Products.Contexts.Colors;
 using Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess.FluentApi.Entities;
 using EShopOnContainer.BackOffice.Infra.Out.AccessData.Contexts.Products.FluentApi;
 using Microsoft.EntityFrameworkCore;
+using ShopOnContainers.BackOffice.Domain.Products.Contexts.Categories;
+using ShopOnContainers.BackOffice.Domain.Products.Contexts.Colors;
 
 namespace EShopOnContainer.BackOffice.Infra.Out.AccessData
 {

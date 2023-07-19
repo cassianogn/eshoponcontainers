@@ -1,12 +1,15 @@
 ﻿using Cassiano.EShopOnContainers.BackOffice.Domain.Products.SubEntities;
 using Cassiano.EShopOnContainers.BackOffice.Domain.Products.ValueObjects;
 using Cassiano.EShopOnContainers.BackOffice.Domain.Products.ValueObjects.DTOs;
+using Cassiano.EShopOnContainers.Core.Domain.DTOs.Entities;
 using Cassiano.EShopOnContainers.Core.Domain.Entities;
+using Cassiano.EShopOnContainers.Core.Domain.ValueObject;
 
 namespace Cassiano.EShopOnContainers.BackOffice.Domain.Products
 {
     public class Product : NamedEntity<Product>
     {
+        private Product() { }
         public Product(Guid id, string name, ProductPriceDTO price, bool enable, string description, IReadOnlyCollection<ProductCategory> productCategories, IReadOnlyCollection<ProductColor> productColors) : base(id, name)
         {
             Price = new ProductPriceVO(price.Sale, price.Cost);
@@ -43,5 +46,13 @@ namespace Cassiano.EShopOnContainers.BackOffice.Domain.Products
             base.SetValidationRules();
         }
 
+        public void UpdateFormData(string name, ProductPriceDTO price, string description, IReadOnlyCollection<ProductCategory> productCategories, IReadOnlyCollection<ProductColor> productColors)
+        {
+            Name = new SearchableStringVO(name);
+            Price = new ProductPriceVO(price.Sale, price.Cost);
+            Description = description;
+            ProductCategories = productCategories;
+            ProductColors = productColors;
+        }
     }
 }

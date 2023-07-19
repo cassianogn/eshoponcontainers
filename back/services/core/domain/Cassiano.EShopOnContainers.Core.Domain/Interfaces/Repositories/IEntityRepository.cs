@@ -1,8 +1,11 @@
-﻿using Cassiano.EShopOnContainers.Core.Domain.Interfaces.Entities;
+﻿using Cassiano.EShopOnContainers.Core.Domain.DTOs.Entities;
+using Cassiano.EShopOnContainers.Core.Domain.DTOs.Search;
+using Cassiano.EShopOnContainers.Core.Domain.Interfaces.Entities;
 
 namespace Cassiano.EShopOnContainers.Core.Domain.Interfaces.Repositories
 {
-    public interface IEntityRepository<TEntity> : IReaderRepository<TEntity>, IWriterRepository<TEntity> where TEntity: IEntity
+    public interface IEntityRepository<TEntity> : IReaderRepository<TEntity>, IWriterRepository<TEntity> 
+        where TEntity: IEntity
     {
     }
 }

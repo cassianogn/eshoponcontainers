@@ -33,6 +33,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.In.Commands.AddEntity
 
         public override async Task<CommandResult<Guid?>> ExecuteAsync(TAddCommand request, CancellationToken cancellationToken)
         {
+            request.Id = Guid.NewGuid();
             TEntity entity = ParseCommandToEntity(request);
 
             await BeforeValidateTemplateMethod(entity, request, cancellationToken);

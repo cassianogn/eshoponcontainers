@@ -7,14 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="In\Commands\Products\AddProduct\" />
-    <Folder Include="In\Commands\Products\DeleteProduct\" />
-    <Folder Include="In\Commands\Products\UpdateProduct\" />
-    <Folder Include="In\Queries\GetProductById\" />
-    <Folder Include="In\Queries\SearchProduct\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\core\application\Cassiano.EShopOnContainers.Core.Application\Cassiano.EShopOnContainers.Core.Application.csproj" />
     <ProjectReference Include="..\..\core\domain\Cassiano.EShopOnContainers.Core.Domain\Cassiano.EShopOnContainers.Core.Domain.csproj" />
     <ProjectReference Include="..\Cassiano.EShopOnContainers.BackOffice.Domain\ShopOnContainers.BackOffice.Domain.csproj" />

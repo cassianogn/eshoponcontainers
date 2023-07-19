@@ -21,6 +21,7 @@ namespace Cassiano.EShopOnContainers.BackOffice.Domain.Products
             IsRequired(entity => entity.EnableDate, "Data de disponibilidade", entity => entity.Enable);
             IsRequired(entity => entity.DisableDate, "Data de remoção", entity => !entity.Enable);
 
+
         }
     }
 }

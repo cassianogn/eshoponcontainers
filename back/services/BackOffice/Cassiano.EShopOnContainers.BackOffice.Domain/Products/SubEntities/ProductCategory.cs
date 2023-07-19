@@ -1,6 +1,6 @@
-﻿using Cassiano.EShopOnContainers.BackOffice.Domain.Products.Contexts.Categories;
-using Cassiano.EShopOnContainers.BackOffice.Domain.Products.SubEntities.ValidationPolicies;
+﻿using Cassiano.EShopOnContainers.BackOffice.Domain.Products.SubEntities.ValidationPolicies;
 using Cassiano.EShopOnContainers.Core.Domain.Entities;
+using ShopOnContainers.BackOffice.Domain.Products.Contexts.Categories;
 
 namespace Cassiano.EShopOnContainers.BackOffice.Domain.Products.SubEntities
 {

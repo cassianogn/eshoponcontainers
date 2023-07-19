@@ -6,6 +6,8 @@ namespace Cassiano.EShopOnContainers.BackOffice.Domain.Products.ValueObjects
 {
     public class ProductPriceVO : IClassWithDomainValidations<ProductPriceVO>
     {
+        private ProductPriceVO() { }
+
         public ProductPriceVO(double sale, double provide)
         {
             Sale = sale;

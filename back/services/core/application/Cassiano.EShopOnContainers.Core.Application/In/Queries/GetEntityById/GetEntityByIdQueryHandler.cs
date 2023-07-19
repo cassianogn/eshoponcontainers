@@ -1,4 +1,5 @@
 ﻿using Cassiano.EShopOnContainers.Core.Domain.EventSourcing;
+using Cassiano.EShopOnContainers.Core.Domain.Helpers.Exceptions;
 using Cassiano.EShopOnContainers.Core.Domain.Interfaces.DTOs;
 using Cassiano.EShopOnContainers.Core.Domain.Interfaces.Entities;
 using Cassiano.EShopOnContainers.Core.Domain.Interfaces.Repositories;
@@ -27,13 +28,13 @@ namespace Cassiano.EShopOnContainers.Core.Application.In.Queries.GetEntityById
             var entity = await Repository.GetByIdAsync(request.Id, cancellationToken);
 
             if (entity == null)
-                throw new Exception($"Entity {typeof(TEntity).Name} with id {request.Id} not found on GetEntityByIdQueryHandler");
+                throw new ApplicationCoreException($"Entity {typeof(TEntity).Name} with id {request.Id} not found on GetEntityByIdQueryHandler");
 
             var entityViewModel = MapEntityToViewModel(entity);
             return CommandResult<TViewModel>.CommandFinished(entityViewModel!);
         }
 
-        protected abstract TViewModel? MapEntityToViewModel(TEntity entity);
+        protected abstract TViewModel MapEntityToViewModel(TEntity entity);
 
         protected override EventType GetEventType() => EventType.Query;
     }

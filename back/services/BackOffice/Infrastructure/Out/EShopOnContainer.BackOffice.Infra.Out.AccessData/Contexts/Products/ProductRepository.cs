@@ -10,5 +10,7 @@ namespace EShopOnContainer.BackOffice.Infra.Out.AccessData.Contexts.Products
         public ProductRepository(BackOfficeDb dbContext) : base(dbContext)
         {
         }
+
+        
     }
 }

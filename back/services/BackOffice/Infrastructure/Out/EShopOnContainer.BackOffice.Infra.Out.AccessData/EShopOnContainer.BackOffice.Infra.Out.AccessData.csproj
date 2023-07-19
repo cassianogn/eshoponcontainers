@@ -19,7 +19,6 @@
     <ProjectReference Include="..\..\..\..\core\insfrastructure\out\Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess\Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess.csproj" />
     <ProjectReference Include="..\..\..\Cassiano.EShopOnContainers.BackOffice.Domain\ShopOnContainers.BackOffice.Domain.csproj" />
     <ProjectReference Include="..\..\..\EShopOnContainer.BackOffice.Application\EShopOnContainer.BackOffice.Application.csproj" />
-    <ProjectReference Include="..\..\In\EShopOnContainer.BackOffice.Infra.In.Http\EShopOnContainer.BackOffice.Infra.In.Http.csproj" />
   </ItemGroup>
 
 </Project>
