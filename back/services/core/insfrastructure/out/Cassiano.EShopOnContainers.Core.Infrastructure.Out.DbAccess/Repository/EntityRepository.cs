@@ -16,7 +16,7 @@ namespace Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess.Repository
             DbContext = dbContext;
             _dbSet = DbContext.Set<TEntity>();
         }
-        protected IQueryable<TEntity> BaseQuery() => _dbSet.Where(entity => !entity.Deleted).AsNoTracking();
+        protected IQueryable<TEntity> BaseQuery() => _dbSet.Where(entity => !entity.Deleted);
         public async Task<TEntity?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
             var query = BaseQuery();
@@ -38,7 +38,6 @@ namespace Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess.Repository
         }
         public async Task UpdateAsync(TEntity entity, CancellationToken cancellationToken = default)
         {
-            _dbSet.Update(entity);
             await DbContext.SaveChangesAsync(cancellationToken);
         }
         public async Task DeleteAsync(Guid id, CancellationToken cancellationToken = default)
@@ -46,7 +45,6 @@ namespace Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess.Repository
             var entity = await BaseQuery().FirstAsync(entity => entity.Id == id, cancellationToken);
             entity.SetAsDeleted();
             await UpdateAsync(entity, cancellationToken);
-
         }
     }
 }

@@ -52,7 +52,7 @@ namespace Cassiano.EShopOnContainers.BackOffice.Domain.Products
             Price = new ProductPriceVO(price.Sale, price.Cost);
             Description = description;
             ProductCategories = productCategories;
-            ProductColors = productColors;
+            //ProductColors = productColors;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Cassiano.EShopOnContainers.Core.Domain.EventSourcing;
+using Cassiano.EShopOnContainers.Core.Domain.Helpers.Exceptions;
 using Cassiano.EShopOnContainers.Core.Domain.Interfaces.DTOs;
 using Cassiano.EShopOnContainers.Core.Domain.Interfaces.Entities;
 using Cassiano.EShopOnContainers.Core.Domain.Interfaces.Repositories;
@@ -24,14 +25,41 @@ namespace Cassiano.EShopOnContainers.Core.Application.In.Commands.DeleteEntity
         protected override EventType GetEventType() => EventType.Delete;
         public override async Task<CommandResult> ExecuteAsync(TDeleteCommand request, CancellationToken cancellationToken)
         {
-            await BeforeDeleteTemplateMethod(request, cancellationToken);
+            await BeforeDelete(request, cancellationToken);
             await Repository.DeleteAsync(request.Id, cancellationToken);
-            await AfterDeleteEntityTemplateMethod(request, cancellationToken);
+            await AfterDeleteEntity(request, cancellationToken);
 
             return CommandResult.CommandFinished();
         }
 
+        private Task BeforeDelete(TDeleteCommand request, CancellationToken cancellationToken)
+        {
+            try
+            {
+                return BeforeDeleteTemplateMethod(request, cancellationToken);
+            }
+            catch (Exception ex)
+            {
+                throw GetTemplateMethodException(request.Id, "BeforeDeleteTemplateMethod", ex);
+            }
+        }
         protected virtual Task BeforeDeleteTemplateMethod(TDeleteCommand request, CancellationToken cancellationToken) => Task.CompletedTask;
+
+        private Task AfterDeleteEntity(TDeleteCommand request, CancellationToken cancellationToken)
+        {
+            try
+            {
+                return AfterDeleteEntityTemplateMethod(request, cancellationToken);
+            }
+            catch (Exception ex)
+            {
+                throw GetTemplateMethodException(request.Id, "AfterDeleteEntityTemplateMethod", ex);
+            }
+        }
         protected virtual Task AfterDeleteEntityTemplateMethod(TDeleteCommand request, CancellationToken cancellationToken) => Task.CompletedTask;
+        private static TemplateMathodException GetTemplateMethodException(Guid? entityId, string templateMathodName, Exception ex)
+        {
+            return TemplateMathodException.Create(typeof(TEntity), typeof(DeleteEntityCommandHandler<TEntity, TRepository, TDeleteCommand>), entityId, templateMathodName, ex);
+        }
     }
 }

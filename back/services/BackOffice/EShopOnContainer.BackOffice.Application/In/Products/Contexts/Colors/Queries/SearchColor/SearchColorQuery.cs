@@ -6,8 +6,5 @@ namespace EShopOnContainer.BackOffice.Application.In.Products.Contexts.Colors.Qu
 {
     public class SearchColorQuery : SearchQuery, IAppMessage<IEnumerable<NamedEntityDTO>>
     {
-        public SearchColorQuery(string queryKey) : base(queryKey)
-        {
-        }
     }
 }

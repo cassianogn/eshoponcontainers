@@ -6,8 +6,6 @@ namespace EShopOnContainer.BackOffice.Application.In.Products.Contexts.Categorie
 {
     public class SearchCategoryQuery : SearchQuery, IAppMessage<IEnumerable<NamedEntityDTO>>
     {
-        public SearchCategoryQuery(string queryKey) : base(queryKey)
-        {
-        }
+     
     }
 }

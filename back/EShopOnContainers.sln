@@ -60,19 +60,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "In", "In", "{81096E34-AACA-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4C9AFB24-F7B9-4533-9C59-E7F23431FA9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackOffice.Infra.In.Tests.Unit", "services\BackOffice\Infrastructure\In\tests\BackOffice.Infra.In.Tests.Unit\BackOffice.Infra.In.Tests.Unit.csproj", "{B0430BB4-692D-4CB1-9C8E-C52969100954}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackOffice.Infra.In.Tests.Unit", "services\BackOffice\Infrastructure\In\tests\BackOffice.Infra.In.Tests.Unit\BackOffice.Infra.In.Tests.Unit.csproj", "{B0430BB4-692D-4CB1-9C8E-C52969100954}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackOffice.Infra.In.Tests.Integration", "services\BackOffice\Infrastructure\In\tests\BackOffice.Infra.In.Tests.Integration\BackOffice.Infra.In.Tests.Integration.csproj", "{E6B955B1-147A-4155-90D8-85057FB5610B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackOffice.Infra.In.Tests.Integration", "services\BackOffice\Infrastructure\In\tests\BackOffice.Infra.In.Tests.Integration\BackOffice.Infra.In.Tests.Integration.csproj", "{E6B955B1-147A-4155-90D8-85057FB5610B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopOnContainer.BackOffice.Infra.In.Http", "services\BackOffice\Infrastructure\In\EShopOnContainer.BackOffice.Infra.In.Http\EShopOnContainer.BackOffice.Infra.In.Http.csproj", "{362275AE-33CD-47C2-90D0-4CC1B6F28B26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopOnContainer.BackOffice.Infra.In.Http", "services\BackOffice\Infrastructure\In\EShopOnContainer.BackOffice.Infra.In.Http\EShopOnContainer.BackOffice.Infra.In.Http.csproj", "{362275AE-33CD-47C2-90D0-4CC1B6F28B26}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Out", "Out", "{67BDAD70-6F4A-4CF0-87F8-2924811BF711}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopOnContainer.BackOffice.Infra.Out.AccessData", "services\BackOffice\Infrastructure\Out\EShopOnContainer.BackOffice.Infra.Out.AccessData\EShopOnContainer.BackOffice.Infra.Out.AccessData.csproj", "{CEC73548-3D7F-4DF2-BD9B-D365D9961C9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopOnContainer.BackOffice.Infra.Out.AccessData", "services\BackOffice\Infrastructure\Out\EShopOnContainer.BackOffice.Infra.Out.AccessData\EShopOnContainer.BackOffice.Infra.Out.AccessData.csproj", "{CEC73548-3D7F-4DF2-BD9B-D365D9961C9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopOnContainer.BackOffice.Infra.CrossCutting", "services\BackOffice\Infrastructure\EShopOnContainer.BackOffice.Infra.CrossCutting\EShopOnContainer.BackOffice.Infra.CrossCutting.csproj", "{6F75F9CF-5463-4631-B8B2-BDC1F979E07D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopOnContainer.BackOffice.Infra.CrossCutting", "services\BackOffice\Infrastructure\EShopOnContainer.BackOffice.Infra.CrossCutting\EShopOnContainer.BackOffice.Infra.CrossCutting.csproj", "{6F75F9CF-5463-4631-B8B2-BDC1F979E07D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopOnContainer.BackOffice.Application", "services\BackOffice\EShopOnContainer.BackOffice.Application\EShopOnContainer.BackOffice.Application.csproj", "{089020D0-5748-4CE3-8229-007213AC43DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopOnContainer.BackOffice.Application", "services\BackOffice\EShopOnContainer.BackOffice.Application\EShopOnContainer.BackOffice.Application.csproj", "{089020D0-5748-4CE3-8229-007213AC43DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopOnContainer.BackOffice.Infra.In.HttpMinimal", "services\BackOffice\Infrastructure\In\EShopOnContainer.BackOffice.Infra.In.HttpMinimal\EShopOnContainer.BackOffice.Infra.In.HttpMinimal.csproj", "{CE0DE9B0-1897-45DF-950F-202D2E2E5C30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cassiano.EShopOnContainers.Core.Infrastructure.In.HttpMinimal", "services\core\insfrastructure\in\Cassiano.EShopOnContainers.Core.Infrastructure.In.HttpMinimal\Cassiano.EShopOnContainers.Core.Infrastructure.In.HttpMinimal.csproj", "{05E5C194-FC04-40F3-AAFE-50F71062CBE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -140,6 +144,14 @@ Global
 		{089020D0-5748-4CE3-8229-007213AC43DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{089020D0-5748-4CE3-8229-007213AC43DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{089020D0-5748-4CE3-8229-007213AC43DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE0DE9B0-1897-45DF-950F-202D2E2E5C30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE0DE9B0-1897-45DF-950F-202D2E2E5C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE0DE9B0-1897-45DF-950F-202D2E2E5C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE0DE9B0-1897-45DF-950F-202D2E2E5C30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05E5C194-FC04-40F3-AAFE-50F71062CBE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05E5C194-FC04-40F3-AAFE-50F71062CBE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05E5C194-FC04-40F3-AAFE-50F71062CBE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05E5C194-FC04-40F3-AAFE-50F71062CBE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -175,6 +187,8 @@ Global
 		{CEC73548-3D7F-4DF2-BD9B-D365D9961C9E} = {67BDAD70-6F4A-4CF0-87F8-2924811BF711}
 		{6F75F9CF-5463-4631-B8B2-BDC1F979E07D} = {281460AD-8B01-4D1C-85A3-71198BFF2AA2}
 		{089020D0-5748-4CE3-8229-007213AC43DC} = {32E5DF78-4B2E-4902-97EB-66204448CC8D}
+		{CE0DE9B0-1897-45DF-950F-202D2E2E5C30} = {81096E34-AACA-4678-9776-CCC5EFE38899}
+		{05E5C194-FC04-40F3-AAFE-50F71062CBE7} = {66669B40-B3B8-43CA-BA5D-F1E67F580E09}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD0BFF79-B832-489C-8822-2D5AC77A0FE4}

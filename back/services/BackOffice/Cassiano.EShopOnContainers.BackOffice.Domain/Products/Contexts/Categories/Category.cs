@@ -6,6 +6,7 @@ namespace ShopOnContainers.BackOffice.Domain.Products.Contexts.Categories
 {
     public class Category : NamedEntity<Category>
     {
+        private Category() { }
         public Category(Guid id, string name) : base(id, name)
         {
         }

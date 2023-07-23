@@ -30,7 +30,17 @@ namespace Cassiano.EShopOnContainers.Core.Application.In.Queries.GetEntityById
             if (entity == null)
                 throw new ApplicationCoreException($"Entity {typeof(TEntity).Name} with id {request.Id} not found on GetEntityByIdQueryHandler");
 
-            var entityViewModel = MapEntityToViewModel(entity);
+            TViewModel entityViewModel;
+            try
+            {
+                entityViewModel = MapEntityToViewModel(entity);
+            }
+            catch (Exception exception)
+            {
+                throw TemplateMathodException.Create(typeof(TEntity), typeof(GetEntityByIdQueryHandler<TEntity, TRepository, TQuery, TViewModel>), entity.Id, "MapEntityToViewModel", exception);
+            }
+
+
             return CommandResult<TViewModel>.CommandFinished(entityViewModel!);
         }
 

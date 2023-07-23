@@ -6,6 +6,9 @@ namespace ShopOnContainers.BackOffice.Domain.Products.Contexts.Colors
 {
     public class Color : NamedEntity<Color>
     {
+        private Color()
+        {
+        }
         public Color(Guid id, string name) : base(id, name)
         {
         }

@@ -11,6 +11,13 @@ namespace EShopOnContainer.BackOffice.Infra.Out.AccessData.Contexts.Products
         {
         }
 
-        
+        protected override IQueryable<Product> ConfigureQueryOnGetByIdTemplateMethod(IQueryable<Product> query)
+        {
+            return query.Include(product => product.ProductCategories)
+                .ThenInclude(productCategory => productCategory.Category)
+                .Include(product => product.ProductColors)
+                .ThenInclude(productColor => productColor.Color);
+        }
+
     }
 }

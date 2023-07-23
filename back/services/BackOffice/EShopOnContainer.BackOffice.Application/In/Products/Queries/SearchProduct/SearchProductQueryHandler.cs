@@ -1,13 +1,7 @@
 ﻿using Cassiano.EShopOnContainers.BackOffice.Domain.Products;
 using Cassiano.EShopOnContainers.Core.Application.In.Queries.SearchNamedEntity;
-using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Models;
 using MediatR;
 using ShopOnContainers.BackOffice.Domain.Products;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EShopOnContainer.BackOffice.Application.In.Products.Queries.SearchProduct
 {
