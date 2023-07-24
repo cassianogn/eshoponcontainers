@@ -1,16 +1,10 @@
-﻿using Cassiano.EShopOnContainers.Core.Domain.DTOs.Entities;
-using Cassiano.EShopOnContainers.Core.Domain.DTOs.Search;
-using Cassiano.EShopOnContainers.Core.Domain.Helpers.Exceptions;
+﻿using Cassiano.EShopOnContainers.Core.Domain.DTOs.Search;
 using Cassiano.EShopOnContainers.Core.Domain.Interfaces.DTOs;
 using Cassiano.EShopOnContainers.Core.Domain.Services.Bus;
 using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Interfaces;
 using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.ComponentModel.DataAnnotations;
 
 namespace Cassiano.EShopOnContainers.Core.Infrastructure.In.HttpMinimal
 {

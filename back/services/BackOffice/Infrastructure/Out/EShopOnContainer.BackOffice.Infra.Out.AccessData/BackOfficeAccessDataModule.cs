@@ -2,10 +2,6 @@
 using EShopOnContainer.BackOffice.Application;
 using EShopOnContainer.BackOffice.Infra.Out.AccessData.Contexts.Products;
 using Microsoft.EntityFrameworkCore;
-using Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess.Repository;
-using ShopOnContainers.BackOffice.Domain.Products.Contexts.Categories;
-using ShopOnContainers.BackOffice.Domain.Products.Contexts.Colors;
-
 namespace EShopOnContainer.BackOffice.Infra.Out.AccessData
 {
     public static class BackOfficeAccessDataModule
