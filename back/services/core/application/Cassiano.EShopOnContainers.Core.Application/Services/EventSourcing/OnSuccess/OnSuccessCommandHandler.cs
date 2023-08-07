@@ -19,7 +19,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.Services.EventSourcing.OnS
             if (!request.EntityId.HasValue)
                 throw new Exception($"The command run with success hasn't a \"Id\" seted. the command: {request.CommandTypeOf}");
 
-            var eventStored = EventStored.GetSuccess(request.EntityId.Value, request.JsonCommand, request.CommandTypeOf!, request.CommandType);
+            var eventStored = EventStoredEvent.GetSuccess(request.EntityId.Value, request.JsonCommand, request.CommandTypeOf!, request.CommandType);
             var command = new SaveEventStoredCommand(eventStored);
             await _mediator.Send(command, cancellationToken);
         }

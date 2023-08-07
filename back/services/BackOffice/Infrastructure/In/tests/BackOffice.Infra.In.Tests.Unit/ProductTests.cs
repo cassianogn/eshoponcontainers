@@ -6,8 +6,7 @@ namespace BackOffice.Infra.In.Tests.Unit
 {
     public class ProductTests
     {
-        // generate tests to ProductValidationStrategyPolicy
-        [Trait("Category", "3 - BackOffice Product")]
+        [Trait("Category", "Unit BackOffice Product")]
         [Fact(DisplayName = "1 - Product valid")]
         public void ProductValidationStrategyPolicy_ShouldBeValid()
         {
@@ -16,7 +15,7 @@ namespace BackOffice.Infra.In.Tests.Unit
             var result = validation.ValidateAsync(product).Result;
             Assert.True(result.IsValid);
         }
-        [Trait("Category", "3 - BackOffice Product")]
+        [Trait("Category", "Unit BackOffice Product")]
         [Fact(DisplayName = "2 - Product invalid")]
         public void ProductValidationStrategyPolicy_ShouldBeInvalid()
         {

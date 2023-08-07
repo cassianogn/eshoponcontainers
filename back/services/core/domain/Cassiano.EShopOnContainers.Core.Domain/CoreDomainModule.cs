@@ -8,7 +8,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain
 {
     public static class CoreDomainModule
     {
-        public static IServiceCollection AddCoreDomainModule<TInfrastructureBusService>(this IServiceCollection services, IList<Assembly> applicationAssemblies)
+        public static IServiceCollection AddCoreDomainModule<TInfrastructureBusService>(this IServiceCollection services, IList<Assembly> applicationAssemblies, Func<IServiceProvider, TInfrastructureBusService> instanceOfInfrastructureBusDelegate)
             where TInfrastructureBusService : class, IInfrastructureBusService
         {
             services.AddMediatR(cfg => {
@@ -19,7 +19,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain
             });
 
             services.AddScoped<DomainNotificationService>();
-            services.AddScoped<IInfrastructureBusService, TInfrastructureBusService>();
+            services.AddScoped<IInfrastructureBusService, TInfrastructureBusService>(instanceOfInfrastructureBusDelegate);
             services.AddScoped<BusService>();
 
             return services;

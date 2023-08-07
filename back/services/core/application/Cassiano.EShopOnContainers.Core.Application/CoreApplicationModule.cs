@@ -8,11 +8,11 @@ namespace Cassiano.EShopOnContainers.Core.Application
     public static class CoreApplicationModule
     {
         // extension methods from IServiceCollection
-        public static IServiceCollection AddCoreApplication<TInfrastructureBusService>(this IServiceCollection services, IList<Assembly> applicationAssemblies)
+        public static IServiceCollection AddCoreApplication<TInfrastructureBusService>(this IServiceCollection services, IList<Assembly> applicationAssemblies, Func<IServiceProvider, TInfrastructureBusService> instanceOfInfrastructureBusDelegate)
             where TInfrastructureBusService : class, IInfrastructureBusService
         {
             applicationAssemblies.Add(typeof(CoreApplicationModule).Assembly);
-            services.AddCoreDomainModule<TInfrastructureBusService>(applicationAssemblies);
+            services.AddCoreDomainModule<TInfrastructureBusService>(applicationAssemblies, instanceOfInfrastructureBusDelegate);
             return services;
         }
     }

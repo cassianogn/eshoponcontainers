@@ -25,7 +25,7 @@ namespace Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess.Repository
             return entity;
         }
         protected virtual IQueryable<TEntity> ConfigureQueryOnGetByIdTemplateMethod(IQueryable<TEntity> query) => query;
-        public abstract Task<IEnumerable<NamedEntityDTO>> SearchByKeywordAsync(string searchKey, CancellationToken cancellationToken = default);
+        public abstract Task<IEnumerable<NamedEntityDTO>> SearchByKeywordAsync(string searchKey = "", CancellationToken cancellationToken = default);
         public async Task AddAsync(TEntity entity, CancellationToken cancellationToken = default)
         {
             await _dbSet.AddAsync(entity);
@@ -38,6 +38,7 @@ namespace Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess.Repository
         }
         public async Task UpdateAsync(TEntity entity, CancellationToken cancellationToken = default)
         {
+
             await DbContext.SaveChangesAsync(cancellationToken);
         }
         public async Task DeleteAsync(Guid id, CancellationToken cancellationToken = default)

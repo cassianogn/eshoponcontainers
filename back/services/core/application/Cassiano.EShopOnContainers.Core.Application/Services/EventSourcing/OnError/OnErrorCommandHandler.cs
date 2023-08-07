@@ -15,7 +15,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.Services.EventSourcing.OnE
 
         public async Task Handle(OnErrorCommand request, CancellationToken cancellationToken)
         {
-            var eventStored = EventStored.GetError(request.EntityId, request.JsonCommand, request.CommandTypeOf!, request.CommandType, request.Exception);
+            var eventStored = EventStoredEvent.GetError(request.EntityId, request.JsonCommand, request.CommandTypeOf!, request.CommandType, request.Exception);
             var command = new SaveEventStoredCommand(eventStored);
             await _mediator.Send(command, cancellationToken);
         }

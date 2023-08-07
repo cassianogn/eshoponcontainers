@@ -34,7 +34,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.Fa
         public FakeControllerTests(FakeControllerFixture fixture)
         {
 
-            var providers = TestsServiceProvider.GetServiceProvider<FakeCleanInfrastructureBus>();
+            var providers = TestsServiceProvider.GetServiceProvider(service => new FakeCleanInfrastructureBus());
             _bus = providers.GetRequiredService<BusService>();
             _domainNotificationService = providers.GetRequiredService<DomainNotificationService>();
             _repository = providers.GetRequiredService<IFakeEntityRepository>();

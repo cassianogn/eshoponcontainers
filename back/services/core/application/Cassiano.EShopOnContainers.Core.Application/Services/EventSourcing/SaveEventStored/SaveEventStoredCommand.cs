@@ -7,11 +7,11 @@ namespace Cassiano.EShopOnContainers.Core.Application.Services.EventSourcing.Sav
     public class SaveEventStoredCommand : IAppMessage, IRequest
     {
 
-        public SaveEventStoredCommand(EventStored eventStored)
+        public SaveEventStoredCommand(EventStoredEvent eventStored)
         {
             EventStored = eventStored;
         }
 
-        public EventStored EventStored { get; private set; }
+        public EventStoredEvent EventStored { get; private set; }
     }
 }

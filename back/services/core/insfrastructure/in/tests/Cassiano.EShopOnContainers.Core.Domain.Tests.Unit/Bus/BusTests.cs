@@ -1,4 +1,5 @@
 ﻿using Cassiano.EShopOnContainers.Core.Application;
+using Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.FakesInfra;
 using Cassiano.EShopOnContainers.Core.Domain.Services.Bus;
 using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications;
 using Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus.TestBusMemory.Commands.TestBusMemoryWithoutReturn;
@@ -26,7 +27,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.Tests.Unit.Bus
         {
             var services = new ServiceCollection();
 
-            services.AddCoreApplication<InfrastructureBus>(new List<Assembly>() { typeof(BusTests).Assembly });
+            services.AddCoreApplication(new List<Assembly>() { typeof(BusTests).Assembly }, service => new InfrastructureBus(service.GetRequiredService<DomainNotificationService>()));
 
             var providers = services.BuildServiceProvider();
 

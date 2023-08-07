@@ -3,7 +3,7 @@ using EShopOnContainer.BackOffice.Infra.CrossCutting;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddApplicationWithDependencies(builder.Configuration.GetConnectionString("DefaultConnection")!);
+builder.Services.AddApplicationWithDependencies(builder.Configuration.GetConnectionString("DefaultConnection")!, builder.Configuration.GetSection("BusServiceConnection:Kafka").Value!);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

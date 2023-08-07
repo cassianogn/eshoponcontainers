@@ -1,5 +1,6 @@
 ﻿using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Interfaces;
 using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Models;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -9,6 +10,11 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastr
     {
         public FakeCleanInfrastructureBus()
         {
+        }
+
+        public Task ConsumerAsync<TData>(Func<TData, Task> onConsume, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
         }
 
         public Task PublishEvent<TData>(TData data, CancellationToken cancellationToken = default)

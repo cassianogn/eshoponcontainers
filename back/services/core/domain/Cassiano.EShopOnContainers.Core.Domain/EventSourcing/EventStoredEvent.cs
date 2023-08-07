@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Cassiano.EShopOnContainers.Core.Domain.EventSourcing
 {
-    public class EventStored : IAppEvent
+    public class EventStoredEvent : IAppEvent
     {
-        private EventStored(Guid id, Guid? entityId, string jsonCommand, string commandTypeOf, EventType type, bool success, string fullException, string messageException)
+        private EventStoredEvent(Guid id, Guid? entityId, string jsonCommand, string commandTypeOf, EventType type, bool success, string fullException, string messageException)
         {
             Id = id;
             JsonCommand = jsonCommand;
@@ -28,7 +28,7 @@ namespace Cassiano.EShopOnContainers.Core.Domain.EventSourcing
         public string FullException { get; private set; }
         public string MessageException { get; private set; }
 
-        public static EventStored GetError(Guid? entityId, string jsonCommand, string commandTypeOf, EventType type, Exception exception)
+        public static EventStoredEvent GetError(Guid? entityId, string jsonCommand, string commandTypeOf, EventType type, Exception exception)
         {
             string fullException;
             try
@@ -39,13 +39,13 @@ namespace Cassiano.EShopOnContainers.Core.Domain.EventSourcing
             {
                 fullException = "";
             }
-            return new EventStored( Guid.NewGuid(), entityId, jsonCommand, commandTypeOf, type, false, fullException, exception.Message);
+            return new EventStoredEvent( Guid.NewGuid(), entityId, jsonCommand, commandTypeOf, type, false, fullException, exception.Message);
         }
 
-        public static EventStored GetSuccess(Guid entityId, string jsonCommand, string commandTypeOf, EventType type)
+        public static EventStoredEvent GetSuccess(Guid entityId, string jsonCommand, string commandTypeOf, EventType type)
         {
            
-            return new EventStored(Guid.NewGuid(), entityId, jsonCommand, commandTypeOf, type, true,"", "");
+            return new EventStoredEvent(Guid.NewGuid(), entityId, jsonCommand, commandTypeOf, type, true,"", "");
         }
     }
 }

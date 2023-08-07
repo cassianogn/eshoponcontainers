@@ -74,9 +74,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopOnContainer.BackOffice
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopOnContainer.BackOffice.Application", "services\BackOffice\EShopOnContainer.BackOffice.Application\EShopOnContainer.BackOffice.Application.csproj", "{089020D0-5748-4CE3-8229-007213AC43DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopOnContainer.BackOffice.Infra.In.HttpMinimal", "services\BackOffice\Infrastructure\In\EShopOnContainer.BackOffice.Infra.In.HttpMinimal\EShopOnContainer.BackOffice.Infra.In.HttpMinimal.csproj", "{CE0DE9B0-1897-45DF-950F-202D2E2E5C30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopOnContainer.BackOffice.Infra.In.HttpMinimal", "services\BackOffice\Infrastructure\In\EShopOnContainer.BackOffice.Infra.In.HttpMinimal\EShopOnContainer.BackOffice.Infra.In.HttpMinimal.csproj", "{CE0DE9B0-1897-45DF-950F-202D2E2E5C30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cassiano.EShopOnContainers.Core.Infrastructure.In.HttpMinimal", "services\core\insfrastructure\in\Cassiano.EShopOnContainers.Core.Infrastructure.In.HttpMinimal\Cassiano.EShopOnContainers.Core.Infrastructure.In.HttpMinimal.csproj", "{05E5C194-FC04-40F3-AAFE-50F71062CBE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cassiano.EShopOnContainers.Core.Infrastructure.In.HttpMinimal", "services\core\insfrastructure\in\Cassiano.EShopOnContainers.Core.Infrastructure.In.HttpMinimal\Cassiano.EShopOnContainers.Core.Infrastructure.In.HttpMinimal.csproj", "{05E5C194-FC04-40F3-AAFE-50F71062CBE7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopOnContainer.BackOffice.Infra.Out.Bus.Kafka", "services\BackOffice\Infrastructure\Out\EShopOnContainer.BackOffice.Infra.Out.Bus.Kafka\EShopOnContainer.BackOffice.Infra.Out.Bus.Kafka.csproj", "{3D2AF086-4C3D-44DE-8178-D4C4F17EDB00}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cassiano.EShopOnContainers.Core.Infrastructure.Out.Bus.Kafka", "services\core\insfrastructure\out\Cassiano.EShopOnContainers.Core.Infrastructure.Out.Bus.Kafka\Cassiano.EShopOnContainers.Core.Infrastructure.Out.Bus.Kafka.csproj", "{72257221-7286-48DD-B26A-1D1D9AC8771A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cassiano.EShopOnContainers.CommandsCentral.Application", "services\CommandsCentral\Cassiano.EShopOnContainers.CommandsCentral.Application\Cassiano.EShopOnContainers.CommandsCentral.Application.csproj", "{AE539ADF-4CCF-420C-87CC-8784A8633D4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Out", "Out", "{6AA23319-4E8C-42C2-9B06-CEB2C88609EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cassiano.EShopOnContainers.CommandsCentral.Infra.Out.AccessData", "services\CommandsCentral\Infra\Out\Cassiano.EShopOnContainers.CommandsCentral.Infra.Out.AccessData\Cassiano.EShopOnContainers.CommandsCentral.Infra.Out.AccessData.csproj", "{75453C90-AD05-4842-9EFA-6F089C192D40}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "In", "In", "{B902AA99-7CB4-489A-BA55-1F1C71A862EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cassiano.EShopOnContainers.CommandsCentral.Infra.In.Http", "services\CommandsCentral\Infra\In\Cassiano.EShopOnContainers.CommandsCentral.Infra.In.Http\Cassiano.EShopOnContainers.CommandsCentral.Infra.In.Http.csproj", "{AF2DD4CF-32C8-410E-9111-477AD109EFB9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cassiano.EShopOnContainers.CommandsCentral.Infra.CrossCutting", "services\CommandsCentral\Infra\Cassiano.EShopOnContainers.CommandsCentral.Infra.CrossCutting\Cassiano.EShopOnContainers.CommandsCentral.Infra.CrossCutting.csproj", "{4F087C5C-DB3D-4463-8866-952721701562}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cassiano.EShopOnContainers.CommandsCentral.Infra.In.Tests", "services\CommandsCentral\Infra\In\Cassiano.EShopOnContainers.CommandsCentral.Infra.In.Tests\Cassiano.EShopOnContainers.CommandsCentral.Infra.In.Tests.csproj", "{5F9C2F3D-B449-4F6F-96DB-6B4DD4DCDC72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cassiano.EShopOnContainers.CommandsCentral.Infra.Out.Bus.Kafka", "services\CommandsCentral\Infra\Out\Cassiano.EShopOnContainers.CommandsCentral.Infra.Out.Bus.Kafka\Cassiano.EShopOnContainers.CommandsCentral.Infra.Out.Bus.Kafka.csproj", "{CC76C724-B999-4B05-9462-0D09E4584F6D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -152,6 +172,38 @@ Global
 		{05E5C194-FC04-40F3-AAFE-50F71062CBE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05E5C194-FC04-40F3-AAFE-50F71062CBE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05E5C194-FC04-40F3-AAFE-50F71062CBE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D2AF086-4C3D-44DE-8178-D4C4F17EDB00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D2AF086-4C3D-44DE-8178-D4C4F17EDB00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D2AF086-4C3D-44DE-8178-D4C4F17EDB00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D2AF086-4C3D-44DE-8178-D4C4F17EDB00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72257221-7286-48DD-B26A-1D1D9AC8771A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72257221-7286-48DD-B26A-1D1D9AC8771A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72257221-7286-48DD-B26A-1D1D9AC8771A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72257221-7286-48DD-B26A-1D1D9AC8771A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE539ADF-4CCF-420C-87CC-8784A8633D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE539ADF-4CCF-420C-87CC-8784A8633D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE539ADF-4CCF-420C-87CC-8784A8633D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE539ADF-4CCF-420C-87CC-8784A8633D4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75453C90-AD05-4842-9EFA-6F089C192D40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75453C90-AD05-4842-9EFA-6F089C192D40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75453C90-AD05-4842-9EFA-6F089C192D40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75453C90-AD05-4842-9EFA-6F089C192D40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF2DD4CF-32C8-410E-9111-477AD109EFB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF2DD4CF-32C8-410E-9111-477AD109EFB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF2DD4CF-32C8-410E-9111-477AD109EFB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF2DD4CF-32C8-410E-9111-477AD109EFB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F087C5C-DB3D-4463-8866-952721701562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F087C5C-DB3D-4463-8866-952721701562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F087C5C-DB3D-4463-8866-952721701562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F087C5C-DB3D-4463-8866-952721701562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F9C2F3D-B449-4F6F-96DB-6B4DD4DCDC72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F9C2F3D-B449-4F6F-96DB-6B4DD4DCDC72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F9C2F3D-B449-4F6F-96DB-6B4DD4DCDC72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F9C2F3D-B449-4F6F-96DB-6B4DD4DCDC72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC76C724-B999-4B05-9462-0D09E4584F6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC76C724-B999-4B05-9462-0D09E4584F6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC76C724-B999-4B05-9462-0D09E4584F6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC76C724-B999-4B05-9462-0D09E4584F6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -189,6 +241,16 @@ Global
 		{089020D0-5748-4CE3-8229-007213AC43DC} = {32E5DF78-4B2E-4902-97EB-66204448CC8D}
 		{CE0DE9B0-1897-45DF-950F-202D2E2E5C30} = {81096E34-AACA-4678-9776-CCC5EFE38899}
 		{05E5C194-FC04-40F3-AAFE-50F71062CBE7} = {66669B40-B3B8-43CA-BA5D-F1E67F580E09}
+		{3D2AF086-4C3D-44DE-8178-D4C4F17EDB00} = {67BDAD70-6F4A-4CF0-87F8-2924811BF711}
+		{72257221-7286-48DD-B26A-1D1D9AC8771A} = {8F9967EE-3C26-4862-B6AD-C00A03E6D2BC}
+		{AE539ADF-4CCF-420C-87CC-8784A8633D4E} = {249CFCAA-E674-4C15-B2E9-1C7928BAD080}
+		{6AA23319-4E8C-42C2-9B06-CEB2C88609EB} = {32E107D6-46A6-4E1E-9DA3-E6122CD7353D}
+		{75453C90-AD05-4842-9EFA-6F089C192D40} = {6AA23319-4E8C-42C2-9B06-CEB2C88609EB}
+		{B902AA99-7CB4-489A-BA55-1F1C71A862EB} = {32E107D6-46A6-4E1E-9DA3-E6122CD7353D}
+		{AF2DD4CF-32C8-410E-9111-477AD109EFB9} = {B902AA99-7CB4-489A-BA55-1F1C71A862EB}
+		{4F087C5C-DB3D-4463-8866-952721701562} = {32E107D6-46A6-4E1E-9DA3-E6122CD7353D}
+		{5F9C2F3D-B449-4F6F-96DB-6B4DD4DCDC72} = {B902AA99-7CB4-489A-BA55-1F1C71A862EB}
+		{CC76C724-B999-4B05-9462-0D09E4584F6D} = {6AA23319-4E8C-42C2-9B06-CEB2C88609EB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD0BFF79-B832-489C-8822-2D5AC77A0FE4}

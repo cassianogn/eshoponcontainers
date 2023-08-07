@@ -12,12 +12,12 @@ namespace Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess.Repository
         {
         }
 
-        public override async Task<IEnumerable<NamedEntityDTO>> SearchByKeywordAsync(string searchKey, CancellationToken cancellationToken = default)
+        public override async Task<IEnumerable<NamedEntityDTO>> SearchByKeywordAsync(string searchKey = "", CancellationToken cancellationToken = default)
         {
             var query = BaseQueryByKeyword(searchKey);
             query = HandlerQuerySearchByKeywordTemplateMethod(query).OrderBy(entity => entity.Name.Value);
 
-            var result = await query.Select(entity => new NamedEntityDTO() { Id = entity.Id, Name = entity.Name.Value }).ToListAsync(cancellationToken: cancellationToken);
+            var result = await query.Select(entity => new NamedEntityDTO() { Id = entity.Id, Name = entity.Name.Value }).Take(30).ToListAsync(cancellationToken: cancellationToken);
             return result;
         }
 

@@ -31,7 +31,7 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Tests.Fa
         public EntityCrudCommandHandlerTest(FakeEntityHandlerFixture fixture)
         {
 
-            var providers = TestsServiceProvider.GetServiceProvider<FakeInfrastructureBus>();
+            var providers = TestsServiceProvider.GetServiceProvider(service => new FakeInfrastructureBus(service.GetRequiredService<DomainNotificationService>()));
             _bus = providers.GetRequiredService<BusService>();
             _domainNotificationService = providers.GetRequiredService<DomainNotificationService>();
             _repository = providers.GetRequiredService<IFakeEntityRepository>();

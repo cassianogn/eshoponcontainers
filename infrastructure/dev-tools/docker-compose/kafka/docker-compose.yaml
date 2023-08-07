@@ -15,7 +15,7 @@ services:
     container_name: kafka-broker-1
     hostname: kafka-broker-1
     ports:
-      - 9092:9092
+      - 9094:9094
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'

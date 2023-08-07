@@ -14,10 +14,10 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastr
 {
     public static class TestsServiceProvider
     {
-        public static IServiceProvider GetServiceProvider<TBus>() where TBus : class, IInfrastructureBusService
+        public static IServiceProvider GetServiceProvider<TInfrastructureBusService>(Func<IServiceProvider, TInfrastructureBusService> instanceOfInfrastructureBusDelegate) where TInfrastructureBusService : class, IInfrastructureBusService
         {
             var services = new ServiceCollection();
-            services.AddCoreApplication<TBus>(new List<Assembly>() { typeof(EntityCrudCommandHandlerTest).Assembly });
+            services.AddCoreApplication(new List<Assembly>() { typeof(EntityCrudCommandHandlerTest).Assembly }, instanceOfInfrastructureBusDelegate);
             services.AddDbContext<TestDb>();
             services.AddScoped<IFakeEntityRepository, FakeEntityRepository>();
             return services.BuildServiceProvider();

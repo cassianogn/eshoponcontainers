@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\EShopOnContainer.BackOffice.Application\EShopOnContainer.BackOffice.Application.csproj" />
     <ProjectReference Include="..\Out\EShopOnContainer.BackOffice.Infra.Out.AccessData\EShopOnContainer.BackOffice.Infra.Out.AccessData.csproj" />
+    <ProjectReference Include="..\Out\EShopOnContainer.BackOffice.Infra.Out.Bus.Kafka\EShopOnContainer.BackOffice.Infra.Out.Bus.Kafka.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,7 @@
 ﻿using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Interfaces;
 using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Models;
 using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -12,6 +13,11 @@ namespace Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastr
         public FakeInfrastructureBus(DomainNotificationService domainNotificationService)
         {
             _domainNotificationService = domainNotificationService;
+        }
+
+        public Task ConsumerAsync<TData>(Func<TData, Task> onConsume, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
         }
 
         public Task PublishEvent<TData>(TData data, CancellationToken cancellationToken = default)

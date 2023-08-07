@@ -38,7 +38,7 @@ namespace Cassiano.EShopOnContainers.Core.Infrastructure.In.HttpMinimal
             app.MapPost(url.Add, async (TAddCommand command, BusService busService, DomainNotificationService domainNotificationService) =>
             {
 
-                var commandResult = await busService.SendMessage<TAddCommand, Guid?>(command);
+                var commandResult = await busService.SendMessage<TAddCommand, Guid?>(command, BusTransactionType.Infrastructure);
                 return MinimalAPIResponse.CareErrors(() => TypedResults.Created($"{baseUrl}/{commandResult.Result!.Value}", new { Id = commandResult.Result!.Value }), domainNotificationService);
             });
 
