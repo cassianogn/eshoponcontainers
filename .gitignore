@@ -397,3 +397,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /back/.idea/.idea.EShopOnContainers/.idea
+/back/services/BackOffice/EShopOnContainer.BackOffice.Application/In/Products/Commands/SetIsaData
