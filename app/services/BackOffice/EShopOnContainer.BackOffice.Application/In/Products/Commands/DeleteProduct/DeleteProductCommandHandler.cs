@@ -1,5 +1,5 @@
-﻿using Cassiano.EShopOnContainers.BackOffice.Domain.Products;
-using Cassiano.EShopOnContainers.Core.Application.In.Commands.DeleteEntity;
+﻿using EShopOnContainer.BackOffice.Domain.Products;
+using DTI.Core.Application.In.Commands.DeleteEntity;
 using MediatR;
 using ShopOnContainers.BackOffice.Domain.Products;
 

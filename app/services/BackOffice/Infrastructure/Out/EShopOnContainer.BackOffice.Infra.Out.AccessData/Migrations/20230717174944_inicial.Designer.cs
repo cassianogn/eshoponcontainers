@@ -25,7 +25,7 @@ namespace EShopOnContainer.BackOffice.Infra.Out.AccessData.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Cassiano.EShopOnContainers.BackOffice.Domain.Products.Contexts.Categories.Category", b =>
+            modelBuilder.Entity("EShopOnContainer.BackOffice.Domain.Products.Contexts.Categories.Category", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -45,7 +45,7 @@ namespace EShopOnContainer.BackOffice.Infra.Out.AccessData.Migrations
                     b.ToTable("Category", (string)null);
                 });
 
-            modelBuilder.Entity("Cassiano.EShopOnContainers.BackOffice.Domain.Products.Contexts.Colors.Color", b =>
+            modelBuilder.Entity("EShopOnContainer.BackOffice.Domain.Products.Contexts.Colors.Color", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -65,7 +65,7 @@ namespace EShopOnContainer.BackOffice.Infra.Out.AccessData.Migrations
                     b.ToTable("Color", (string)null);
                 });
 
-            modelBuilder.Entity("Cassiano.EShopOnContainers.BackOffice.Domain.Products.Product", b =>
+            modelBuilder.Entity("EShopOnContainer.BackOffice.Domain.Products.Product", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -99,7 +99,7 @@ namespace EShopOnContainer.BackOffice.Infra.Out.AccessData.Migrations
                     b.ToTable("Product", (string)null);
                 });
 
-            modelBuilder.Entity("Cassiano.EShopOnContainers.BackOffice.Domain.Products.SubEntities.ProductCategory", b =>
+            modelBuilder.Entity("EShopOnContainer.BackOffice.Domain.Products.SubEntities.ProductCategory", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -129,7 +129,7 @@ namespace EShopOnContainer.BackOffice.Infra.Out.AccessData.Migrations
                     b.ToTable("ProductCategory", (string)null);
                 });
 
-            modelBuilder.Entity("Cassiano.EShopOnContainers.BackOffice.Domain.Products.SubEntities.ProductColor", b =>
+            modelBuilder.Entity("EShopOnContainer.BackOffice.Domain.Products.SubEntities.ProductColor", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -162,9 +162,9 @@ namespace EShopOnContainer.BackOffice.Infra.Out.AccessData.Migrations
                     b.ToTable("ProductColor", (string)null);
                 });
 
-            modelBuilder.Entity("Cassiano.EShopOnContainers.BackOffice.Domain.Products.Contexts.Categories.Category", b =>
+            modelBuilder.Entity("EShopOnContainer.BackOffice.Domain.Products.Contexts.Categories.Category", b =>
                 {
-                    b.OwnsOne("Cassiano.EShopOnContainers.Core.Domain.ValueObject.SearchableStringVO", "Name", b1 =>
+                    b.OwnsOne("DTI.Core.Domain.ValueObject.SearchableStringVO", "Name", b1 =>
                         {
                             b1.Property<Guid>("CategoryId")
                                 .HasColumnType("uniqueidentifier");
@@ -191,9 +191,9 @@ namespace EShopOnContainer.BackOffice.Infra.Out.AccessData.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Cassiano.EShopOnContainers.BackOffice.Domain.Products.Contexts.Colors.Color", b =>
+            modelBuilder.Entity("EShopOnContainer.BackOffice.Domain.Products.Contexts.Colors.Color", b =>
                 {
-                    b.OwnsOne("Cassiano.EShopOnContainers.Core.Domain.ValueObject.SearchableStringVO", "Name", b1 =>
+                    b.OwnsOne("DTI.Core.Domain.ValueObject.SearchableStringVO", "Name", b1 =>
                         {
                             b1.Property<Guid>("ColorId")
                                 .HasColumnType("uniqueidentifier");
@@ -220,9 +220,9 @@ namespace EShopOnContainer.BackOffice.Infra.Out.AccessData.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Cassiano.EShopOnContainers.BackOffice.Domain.Products.Product", b =>
+            modelBuilder.Entity("EShopOnContainer.BackOffice.Domain.Products.Product", b =>
                 {
-                    b.OwnsOne("Cassiano.EShopOnContainers.Core.Domain.ValueObject.SearchableStringVO", "Name", b1 =>
+                    b.OwnsOne("DTI.Core.Domain.ValueObject.SearchableStringVO", "Name", b1 =>
                         {
                             b1.Property<Guid>("ProductId")
                                 .HasColumnType("uniqueidentifier");
@@ -245,7 +245,7 @@ namespace EShopOnContainer.BackOffice.Infra.Out.AccessData.Migrations
                                 .HasForeignKey("ProductId");
                         });
 
-                    b.OwnsOne("Cassiano.EShopOnContainers.BackOffice.Domain.Products.ValueObjects.ProductPriceVO", "Price", b1 =>
+                    b.OwnsOne("EShopOnContainer.BackOffice.Domain.Products.ValueObjects.ProductPriceVO", "Price", b1 =>
                         {
                             b1.Property<Guid>("ProductId")
                                 .HasColumnType("uniqueidentifier");
@@ -271,15 +271,15 @@ namespace EShopOnContainer.BackOffice.Infra.Out.AccessData.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Cassiano.EShopOnContainers.BackOffice.Domain.Products.SubEntities.ProductCategory", b =>
+            modelBuilder.Entity("EShopOnContainer.BackOffice.Domain.Products.SubEntities.ProductCategory", b =>
                 {
-                    b.HasOne("Cassiano.EShopOnContainers.BackOffice.Domain.Products.Contexts.Categories.Category", "Category")
+                    b.HasOne("EShopOnContainer.BackOffice.Domain.Products.Contexts.Categories.Category", "Category")
                         .WithMany("ProductCategories")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Cassiano.EShopOnContainers.BackOffice.Domain.Products.Product", "Product")
+                    b.HasOne("EShopOnContainer.BackOffice.Domain.Products.Product", "Product")
                         .WithMany("ProductCategories")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -290,15 +290,15 @@ namespace EShopOnContainer.BackOffice.Infra.Out.AccessData.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Cassiano.EShopOnContainers.BackOffice.Domain.Products.SubEntities.ProductColor", b =>
+            modelBuilder.Entity("EShopOnContainer.BackOffice.Domain.Products.SubEntities.ProductColor", b =>
                 {
-                    b.HasOne("Cassiano.EShopOnContainers.BackOffice.Domain.Products.Contexts.Colors.Color", "Color")
+                    b.HasOne("EShopOnContainer.BackOffice.Domain.Products.Contexts.Colors.Color", "Color")
                         .WithMany("ProductColors")
                         .HasForeignKey("ColorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Cassiano.EShopOnContainers.BackOffice.Domain.Products.Product", "Product")
+                    b.HasOne("EShopOnContainer.BackOffice.Domain.Products.Product", "Product")
                         .WithMany("ProductColors")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -309,17 +309,17 @@ namespace EShopOnContainer.BackOffice.Infra.Out.AccessData.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Cassiano.EShopOnContainers.BackOffice.Domain.Products.Contexts.Categories.Category", b =>
+            modelBuilder.Entity("EShopOnContainer.BackOffice.Domain.Products.Contexts.Categories.Category", b =>
                 {
                     b.Navigation("ProductCategories");
                 });
 
-            modelBuilder.Entity("Cassiano.EShopOnContainers.BackOffice.Domain.Products.Contexts.Colors.Color", b =>
+            modelBuilder.Entity("EShopOnContainer.BackOffice.Domain.Products.Contexts.Colors.Color", b =>
                 {
                     b.Navigation("ProductColors");
                 });
 
-            modelBuilder.Entity("Cassiano.EShopOnContainers.BackOffice.Domain.Products.Product", b =>
+            modelBuilder.Entity("EShopOnContainer.BackOffice.Domain.Products.Product", b =>
                 {
                     b.Navigation("ProductCategories");
 

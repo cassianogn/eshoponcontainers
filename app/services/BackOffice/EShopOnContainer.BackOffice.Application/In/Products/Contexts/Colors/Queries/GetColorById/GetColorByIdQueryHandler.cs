@@ -1,5 +1,5 @@
-﻿using Cassiano.EShopOnContainers.Core.Application.In.Queries.GetEntityById;
-using Cassiano.EShopOnContainers.Core.Domain.DTOs.Entities;
+﻿using DTI.Core.Application.In.Queries.GetEntityById;
+using DTI.Core.Domain.DTOs.Entities;
 using MediatR;
 using ShopOnContainers.BackOffice.Domain.Products.Contexts.Colors;
 

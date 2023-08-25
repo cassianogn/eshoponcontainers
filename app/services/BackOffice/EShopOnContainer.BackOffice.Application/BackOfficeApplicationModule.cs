@@ -1,5 +1,5 @@
-﻿using Cassiano.EShopOnContainers.Core.Application;
-using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Interfaces;
+﻿using DTI.Core.Application;
+using DTI.Core.Domain.Services.Bus.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using ShopOnContainers.BackOffice.Domain.Products;
 using ShopOnContainers.BackOffice.Domain.Products.Contexts.Categories;

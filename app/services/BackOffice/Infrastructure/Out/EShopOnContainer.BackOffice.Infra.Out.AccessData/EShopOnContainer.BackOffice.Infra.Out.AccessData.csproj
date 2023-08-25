@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\core\insfrastructure\out\Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess\Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess.csproj" />
-    <ProjectReference Include="..\..\..\Cassiano.EShopOnContainers.BackOffice.Domain\ShopOnContainers.BackOffice.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\core\insfrastructure\out\DTI.Core.Infrastructure.Out.DbAccess\DTI.Core.Infrastructure.Out.DbAccess.csproj" />
+    <ProjectReference Include="..\..\..\EShopOnContainer.BackOffice.Domain\EShopOnContainer.BackOffice.Domain.csproj" />
     <ProjectReference Include="..\..\..\EShopOnContainer.BackOffice.Application\EShopOnContainer.BackOffice.Application.csproj" />
   </ItemGroup>
 

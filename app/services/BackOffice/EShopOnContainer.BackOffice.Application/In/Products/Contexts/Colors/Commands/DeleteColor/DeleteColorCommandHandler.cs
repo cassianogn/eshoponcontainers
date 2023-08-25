@@ -1,4 +1,4 @@
-﻿using Cassiano.EShopOnContainers.Core.Application.In.Commands.DeleteEntity;
+﻿using DTI.Core.Application.In.Commands.DeleteEntity;
 using MediatR;
 using ShopOnContainers.BackOffice.Domain.Products.Contexts.Colors;
 

@@ -1,6 +1,6 @@
-﻿using Cassiano.EShopOnContainers.Core.Application.In.Queries.GetEntityById;
-using Cassiano.EShopOnContainers.Core.Domain.DTOs.Entities;
-using Cassiano.EShopOnContainers.Core.Domain.Interfaces.Repositories;
+﻿using DTI.Core.Application.In.Queries.GetEntityById;
+using DTI.Core.Domain.DTOs.Entities;
+using DTI.Core.Domain.Interfaces.Repositories;
 using MediatR;
 using ShopOnContainers.BackOffice.Domain.Products.Contexts.Categories;
 

@@ -42,8 +42,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\..\..\..\core\domain\Cassiano.EShopOnContainers.Core.Domain\Cassiano.EShopOnContainers.Core.Domain.csproj" />
-		<ProjectReference Include="..\..\..\..\Cassiano.EShopOnContainers.BackOffice.Domain\ShopOnContainers.BackOffice.Domain.csproj" />
+		<ProjectReference Include="..\..\..\..\..\core\domain\DTI.Core.Domain\DTI.Core.Domain.csproj" />
+		<ProjectReference Include="..\..\..\..\EShopOnContainer.BackOffice.Domain\EShopOnContainer.BackOffice.Domain.csproj" />
 		<ProjectReference Include="..\..\..\EShopOnContainer.BackOffice.Infra.CrossCutting\EShopOnContainer.BackOffice.Infra.CrossCutting.csproj" />
 	</ItemGroup>
 

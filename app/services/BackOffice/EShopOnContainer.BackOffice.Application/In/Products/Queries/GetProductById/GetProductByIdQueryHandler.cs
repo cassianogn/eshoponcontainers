@@ -1,7 +1,7 @@
-﻿using Cassiano.EShopOnContainers.BackOffice.Domain.Products;
-using Cassiano.EShopOnContainers.BackOffice.Domain.Products.ValueObjects.DTOs;
-using Cassiano.EShopOnContainers.Core.Application.In.Queries.GetEntityById;
-using Cassiano.EShopOnContainers.Core.Domain.DTOs.Entities;
+﻿using EShopOnContainer.BackOffice.Domain.Products;
+using EShopOnContainer.BackOffice.Domain.Products.ValueObjects.DTOs;
+using DTI.Core.Application.In.Queries.GetEntityById;
+using DTI.Core.Domain.DTOs.Entities;
 using MediatR;
 using ShopOnContainers.BackOffice.Domain.Products;
 

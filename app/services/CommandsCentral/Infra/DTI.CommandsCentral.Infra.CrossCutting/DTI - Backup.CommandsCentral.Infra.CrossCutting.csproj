@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Out\DTI.CommandsCentral.Infra.Out.AccessData\DTI.CommandsCentral.Infra.Out.AccessData.csproj" />
+    <ProjectReference Include="..\Out\DTI.CommandsCentral.Infra.Out.Bus.Kafka\DTI.CommandsCentral.Infra.Out.Bus.Kafka.csproj" />
+  </ItemGroup>
+
+</Project>

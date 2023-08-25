@@ -1,5 +1,5 @@
-﻿using Cassiano.EShopOnContainers.BackOffice.Domain.Products.SubEntities;
-using Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess.FluentApi.Entities;
+﻿using EShopOnContainer.BackOffice.Domain.Products.SubEntities;
+using DTI.Core.Infrastructure.Out.DbAccess.FluentApi.Entities;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EShopOnContainer.BackOffice.Infra.Out.AccessData.Contexts.Products.FluentApi

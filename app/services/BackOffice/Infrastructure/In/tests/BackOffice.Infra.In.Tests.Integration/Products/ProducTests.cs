@@ -1,7 +1,7 @@
 ﻿using BackOffice.Infra.In.Tests.Integration.Infrastructure;
-using Cassiano.EShopOnContainers.BackOffice.Domain.Products.ValueObjects.DTOs;
-using Cassiano.EShopOnContainers.Core.Domain.DTOs.Entities;
-using Cassiano.EShopOnContainers.Core.Domain.Services.Bus;
+using EShopOnContainer.BackOffice.Domain.Products.ValueObjects.DTOs;
+using DTI.Core.Domain.DTOs.Entities;
+using DTI.Core.Domain.Services.Bus;
 using EShopOnContainer.BackOffice.Application.In.Products.Commands.AddProduct;
 using EShopOnContainer.BackOffice.Application.In.Products.Commands.Shared;
 using EShopOnContainer.BackOffice.Application.In.Products.Contexts.Categories.Commands.AddCategory;
@@ -15,7 +15,7 @@ using ShopOnContainers.BackOffice.Domain.Products.Contexts.Colors;
 
 namespace BackOffice.Infra.In.Tests.Integration.Products
 {
-    //[TestCaseOrderer("Cassiano.EShopOnContainers.Core.Application.Tests.Integration.Infrastructure.TestsConfig.Orders.PriorityOrderer", "Cassiano.EShopOnContainers.Core.Application.Tests.Integration")]
+    //[TestCaseOrderer("DTI.Core.Application.Tests.Integration.Infrastructure.TestsConfig.Orders.PriorityOrderer", "DTI.Core.Application.Tests.Integration")]
     [Collection(nameof(ProductHandlerCollection))]
     public class ProducTests
     {

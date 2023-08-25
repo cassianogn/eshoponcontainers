@@ -1,4 +1,4 @@
-﻿using Cassiano.EShopOnContainers.BackOffice.Domain.Products;
+﻿using EShopOnContainer.BackOffice.Domain.Products;
 
 namespace BackOffice.Infra.In.Tests.Integration.Products
 {

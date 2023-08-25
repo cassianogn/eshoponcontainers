@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Cassiano.EShopOnContainers.BackOffice.Domain\ShopOnContainers.BackOffice.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\EShopOnContainer.BackOffice.Domain\EShopOnContainer.BackOffice.Domain.csproj" />
   </ItemGroup>
 
 </Project>

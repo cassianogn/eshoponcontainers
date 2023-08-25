@@ -1,4 +1,4 @@
-﻿using Cassiano.EShopOnContainers.Core.Domain.DTOs.Entities;
+﻿using DTI.Core.Domain.DTOs.Entities;
 
 namespace EShopOnContainer.BackOffice.Application.In.Products.Queries.SearchProduct
 {

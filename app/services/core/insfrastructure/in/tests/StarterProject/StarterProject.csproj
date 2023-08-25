@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cassiano.EShopOnContainers.Core.Application.Tests.Integration\Cassiano.EShopOnContainers.Core.Application.Tests.Integration.csproj" />
+    <ProjectReference Include="..\DTI.Core.Application.Tests.Integration\DTI.Core.Application.Tests.Integration.csproj" />
   </ItemGroup>
 
   <ItemGroup>

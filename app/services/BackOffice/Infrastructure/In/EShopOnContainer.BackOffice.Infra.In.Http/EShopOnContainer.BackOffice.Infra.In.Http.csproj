@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\core\insfrastructure\in\Cassiano.EShopOnContainers.Core.Infrastructure.In.Http\Cassiano.EShopOnContainers.Core.Infrastructure.In.Http.csproj" />
+    <ProjectReference Include="..\..\..\..\core\insfrastructure\in\DTI.Core.Infrastructure.In.Http\DTI.Core.Infrastructure.In.Http.csproj" />
     <ProjectReference Include="..\..\EShopOnContainer.BackOffice.Infra.CrossCutting\EShopOnContainer.BackOffice.Infra.CrossCutting.csproj" />
   </ItemGroup>
 

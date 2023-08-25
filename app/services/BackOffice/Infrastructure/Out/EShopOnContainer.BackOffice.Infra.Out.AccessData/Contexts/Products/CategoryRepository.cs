@@ -1,4 +1,4 @@
-﻿using Cassiano.EShopOnContainers.Core.Infrastructure.Out.DbAccess.Repository;
+﻿using DTI.Core.Infrastructure.Out.DbAccess.Repository;
 using ShopOnContainers.BackOffice.Domain.Products.Contexts.Categories;
 
 namespace EShopOnContainer.BackOffice.Infra.Out.AccessData.Contexts.Products

@@ -1,4 +1,4 @@
-﻿using Cassiano.EShopOnContainers.Core.Infrastructure.Out.Bus.Kafka;
+﻿using DTI.Core.Infrastructure.Out.Bus.Kafka;
 
 namespace EShopOnContainer.BackOffice.Infra.Out.Bus.Kafka
 {

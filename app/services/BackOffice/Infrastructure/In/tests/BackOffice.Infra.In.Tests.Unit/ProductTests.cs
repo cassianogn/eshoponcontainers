@@ -1,6 +1,6 @@
-using Cassiano.EShopOnContainers.BackOffice.Domain.Products;
-using Cassiano.EShopOnContainers.BackOffice.Domain.Products.SubEntities;
-using Cassiano.EShopOnContainers.BackOffice.Domain.Products.ValueObjects.DTOs;
+using EShopOnContainer.BackOffice.Domain.Products;
+using EShopOnContainer.BackOffice.Domain.Products.SubEntities;
+using EShopOnContainer.BackOffice.Domain.Products.ValueObjects.DTOs;
 
 namespace BackOffice.Infra.In.Tests.Unit
 {

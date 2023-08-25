@@ -1,7 +1,7 @@
-﻿using Cassiano.EShopOnContainers.BackOffice.Domain.Products.SubEntities;
-using Cassiano.EShopOnContainers.BackOffice.Domain.Products.ValueObjects;
-using Cassiano.EShopOnContainers.BackOffice.Domain.Products.ValueObjects.DTOs;
-using Cassiano.EShopOnContainers.Core.Domain.DTOs.Entities;
+﻿using EShopOnContainer.BackOffice.Domain.Products.SubEntities;
+using EShopOnContainer.BackOffice.Domain.Products.ValueObjects;
+using EShopOnContainer.BackOffice.Domain.Products.ValueObjects.DTOs;
+using DTI.Core.Domain.DTOs.Entities;
 
 namespace EShopOnContainer.BackOffice.Application.In.Products.Queries.GetProductById
 {

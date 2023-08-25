@@ -1,5 +1,5 @@
-﻿using Cassiano.EShopOnContainers.BackOffice.Domain.Products;
-using Cassiano.EShopOnContainers.Core.Application.In.Queries.SearchNamedEntity;
+﻿using EShopOnContainer.BackOffice.Domain.Products;
+using DTI.Core.Application.In.Queries.SearchNamedEntity;
 using MediatR;
 using ShopOnContainers.BackOffice.Domain.Products;
 

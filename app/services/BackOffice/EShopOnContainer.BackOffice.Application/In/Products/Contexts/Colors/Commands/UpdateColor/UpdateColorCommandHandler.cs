@@ -1,5 +1,5 @@
-﻿using Cassiano.EShopOnContainers.Core.Application.In.Commands.UpdateEntity;
-using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications;
+﻿using DTI.Core.Application.In.Commands.UpdateEntity;
+using DTI.Core.Domain.Services.DomainNotifications;
 using MediatR;
 using ShopOnContainers.BackOffice.Domain.Products.Contexts.Colors;
 

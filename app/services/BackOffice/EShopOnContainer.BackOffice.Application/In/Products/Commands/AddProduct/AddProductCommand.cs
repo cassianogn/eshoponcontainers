@@ -1,4 +1,4 @@
-﻿using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Interfaces;
+﻿using DTI.Core.Domain.Services.Bus.Interfaces;
 using EShopOnContainer.BackOffice.Application.In.Products.Commands.Shared;
 
 namespace EShopOnContainer.BackOffice.Application.In.Products.Commands.AddProduct

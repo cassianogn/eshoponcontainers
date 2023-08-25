@@ -1,6 +1,6 @@
-﻿using Cassiano.EShopOnContainers.BackOffice.Domain.Products.ValueObjects.DTOs;
-using Cassiano.EShopOnContainers.Core.Domain.DTOs.Entities;
-using Cassiano.EShopOnContainers.Core.Domain.Services.Bus.Interfaces;
+﻿using EShopOnContainer.BackOffice.Domain.Products.ValueObjects.DTOs;
+using DTI.Core.Domain.DTOs.Entities;
+using DTI.Core.Domain.Services.Bus.Interfaces;
 
 namespace EShopOnContainer.BackOffice.Application.In.Products.Commands.Shared
 {

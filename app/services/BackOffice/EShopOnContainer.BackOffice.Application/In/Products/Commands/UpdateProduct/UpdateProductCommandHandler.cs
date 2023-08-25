@@ -1,7 +1,7 @@
-﻿using Cassiano.EShopOnContainers.BackOffice.Domain.Products;
-using Cassiano.EShopOnContainers.BackOffice.Domain.Products.SubEntities;
-using Cassiano.EShopOnContainers.Core.Application.In.Commands.UpdateEntity;
-using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications;
+﻿using EShopOnContainer.BackOffice.Domain.Products;
+using EShopOnContainer.BackOffice.Domain.Products.SubEntities;
+using DTI.Core.Application.In.Commands.UpdateEntity;
+using DTI.Core.Domain.Services.DomainNotifications;
 using MediatR;
 using ShopOnContainers.BackOffice.Domain.Products;
 

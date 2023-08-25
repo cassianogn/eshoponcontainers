@@ -1,5 +1,5 @@
 
-using Cassiano.EShopOnContainers.Core.Infrastructure.In.HttpMinimal;
+using DTI.Core.Infrastructure.In.HttpMinimal;
 using EShopOnContainer.BackOffice.Application.In.Products.Commands.AddProduct;
 using EShopOnContainer.BackOffice.Application.In.Products.Commands.DeleteProduct;
 using EShopOnContainer.BackOffice.Application.In.Products.Commands.UpdateProduct;

@@ -1,8 +1,7 @@
-﻿using Cassiano.EShopOnContainers.BackOffice.Domain.Products;
-using Cassiano.EShopOnContainers.BackOffice.Domain.Products.SubEntities;
-using Cassiano.EShopOnContainers.Core.Application.In.Commands.AddEntity;
-using Cassiano.EShopOnContainers.Core.Domain.Services.DomainNotifications;
-using Cassiano.EShopOnContainers.Core.Domain.Services.Validations;
+﻿using EShopOnContainer.BackOffice.Domain.Products;
+using EShopOnContainer.BackOffice.Domain.Products.SubEntities;
+using DTI.Core.Application.In.Commands.AddEntity;
+using DTI.Core.Domain.Services.DomainNotifications;
 using MediatR;
 using ShopOnContainers.BackOffice.Domain.Products;
 
