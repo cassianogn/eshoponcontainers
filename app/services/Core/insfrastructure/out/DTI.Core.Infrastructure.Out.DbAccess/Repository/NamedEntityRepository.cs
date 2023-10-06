@@ -16,7 +16,11 @@ namespace DTI.Core.Infrastructure.Out.DbAccess.Repository
         {
             var query = BaseQueryByKeyword(searchKey);
             query = HandlerQuerySearchByKeywordTemplateMethod(query).OrderBy(entity => entity.Name.Value);
-            var result = await query.Select(entity => new NamedEntityDTO() { Id = entity.Id, Name = entity.Name.Value}).Take(30).ToListAsync(cancellationToken: cancellationToken);
+
+            var result = await query.Select(entity => new NamedEntityDTO() { Id = entity.Id, Name = entity.Name.Value})
+                .OrderBy(entity => entity.Name)
+                .Take(30)
+                .ToListAsync(cancellationToken: cancellationToken);
             return result;
         }
 
@@ -24,7 +28,8 @@ namespace DTI.Core.Infrastructure.Out.DbAccess.Repository
         {
             searchKey = searchKey.ToSerachable();
             var query = BaseQuery();
-            query = query.Where(entity => entity.Name.SearchableValue.Contains(searchKey));
+            if (!string.IsNullOrEmpty(searchKey))
+                query = query.Where(entity => entity.Name.SearchableValue.Contains(searchKey));
             return query;
         }
 

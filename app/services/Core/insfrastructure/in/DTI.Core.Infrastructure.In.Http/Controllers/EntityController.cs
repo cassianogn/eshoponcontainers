@@ -19,7 +19,7 @@ namespace DTI.Core.Infrastructure.In.Http.Controllers
             BusService = busService;
         }
 
-        [HttpGet("${id}")]
+        [HttpGet("{id}")]
         public virtual async Task<IActionResult> GetById(Guid id)
         {
             var query = new TGetByIdQuery() { Id = id };
@@ -33,7 +33,7 @@ namespace DTI.Core.Infrastructure.In.Http.Controllers
             var commandResult = await BusService.SendMessage<TAddCommand, Guid?>(command);
             return ResponseCareErrors(() => Created("", new { Id = commandResult.Result!.Value }));
         }
-        [HttpPut("${id}")]
+        [HttpPut("{id}")]
         public virtual async Task<IActionResult> UpdateAsync(Guid id, TUpdateCommand command)
         {
             if (id != command.Id)
@@ -43,7 +43,7 @@ namespace DTI.Core.Infrastructure.In.Http.Controllers
             return ResponseCareErrors(NoContent);
         }
 
-        [HttpDelete("${id}")]
+        [HttpDelete("{id}")]
         public virtual async Task<IActionResult> DeleteAsync(Guid id)
         {
             var command = new TDeleteCommand() { Id = id };

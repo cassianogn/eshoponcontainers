@@ -1,7 +1,6 @@
 ﻿using EShopOnContainer.BackOffice.Domain.Products.SubEntities;
 using EShopOnContainer.BackOffice.Domain.Products.ValueObjects;
 using EShopOnContainer.BackOffice.Domain.Products.ValueObjects.DTOs;
-using DTI.Core.Domain.DTOs.Entities;
 using DTI.Core.Domain.Entities;
 using DTI.Core.Domain.ValueObject;
 
@@ -21,7 +20,9 @@ namespace EShopOnContainer.BackOffice.Domain.Products
             ProductCategories = productCategories;
             ProductColors = productColors;
         }
+        
         public ProductPriceVO Price { get; private set; }
+
         public bool Enable { get; private set; }
         public string Description { get; private set; }
         public DateTime? EnableDate { get; private set; }
@@ -52,7 +53,7 @@ namespace EShopOnContainer.BackOffice.Domain.Products
             Price = new ProductPriceVO(price.Sale, price.Cost);
             Description = description;
             ProductCategories = productCategories;
-            //ProductColors = productColors;
+            ProductColors = productColors;
         }
     }
 }

@@ -45,13 +45,16 @@ namespace DTI.Core.Domain.Services.Bus
         public async Task<CommandResult<TResponse>> SendMessage<TData, TResponse>(TData data, BusTransactionType transactionType = BusTransactionType.Memory, CancellationToken cancellationToken = default)
             where TData : IAppMessage<TResponse>
         {
-
-            return transactionType switch
+            switch (transactionType)
             {
-                BusTransactionType.Memory => await _mediator.Send(data!, cancellationToken),
-                BusTransactionType.Infrastructure => await _infrastructureBus.SendMessage<TData, TResponse>(data, cancellationToken),
-                _ => throw new Exception("Invalid transaction type"),
-            };
+                case BusTransactionType.Memory:
+                    return await _mediator.Send(data!, cancellationToken);
+                case BusTransactionType.Infrastructure:
+                    return await _infrastructureBus.SendMessage<TData, TResponse>(data, cancellationToken);
+                default:
+                    throw new Exception("Invalid transaction type");
+            }
+
         }
     }
 }

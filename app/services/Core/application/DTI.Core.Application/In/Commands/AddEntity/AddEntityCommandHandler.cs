@@ -42,6 +42,7 @@ namespace DTI.Core.Application.In.Commands.AddEntity
             try
             {
                 entity = ParseCommandToEntity(request);
+                if (DomainNotificationService.HasNotification()) return CommandResult<Guid?>.CommandFinished(null);
             }
             catch (Exception ex)
             {

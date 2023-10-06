@@ -38,7 +38,7 @@ namespace DTI.Core.Domain.Services.Bus.Bases
 
     public abstract class BaseRequestHandler<TRequest, TResponse> :
         IRequestHandler<TRequest, CommandResult<TResponse>>
-        where TRequest : IRequest<CommandResult<TResponse>>, IEntityDTO
+        where TRequest : IRequest<CommandResult<TResponse>>
     {
         private readonly IMediator _mediator;
 

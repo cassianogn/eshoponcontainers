@@ -32,7 +32,6 @@ namespace DTI.Core.Domain.Services.Validations.Helpers
             return ValidationStrategyPolicyResult.Invalid(errorGrouop, errorMessages);
         }
 
-
         protected string GetPropertyName<TPropertyReturn>(Expression<Func<TEntity, TPropertyReturn>> expressionProperty, string property)
         {
             if (string.IsNullOrEmpty(property))

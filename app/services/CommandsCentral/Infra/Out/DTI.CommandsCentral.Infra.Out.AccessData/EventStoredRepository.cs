@@ -1,5 +1,6 @@
 ﻿using DTI.CommandsCentral.Domain.EventSourcing;
 using DTI.CommandsCentral.Domain.EventSourcing.DTOs;
+using Elastic.Apm.MongoDb;
 using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -12,7 +13,9 @@ namespace DTI.CommandsCentral.Infra.Out.AccessData
 
         public EventStoredRepository(IOptions<MongoDatabaseSettings> mongoOptionsService)
         {
-            var mongoClient = new MongoClient(mongoOptionsService.Value.ConnectionString);
+            var setting = MongoClientSettings.FromConnectionString(mongoOptionsService.Value.ConnectionString);
+            setting.ClusterConfigurator = builder => builder.Subscribe(new MongoDbEventSubscriber());
+            var mongoClient = new MongoClient(setting);
             var mongoDatabase = mongoClient.GetDatabase(mongoOptionsService.Value.DatabaseName);
             _eventsCollection = mongoDatabase.GetCollection<EventStoredBsonModel>(mongoOptionsService.Value.EventStoredCollection);
         }

@@ -12,7 +12,7 @@ using System.Reflection;
 
 namespace DTI.Core.Application.Tests.Integration.Infrastructure.TestsConfig.IoC
 {
-    public static class TestsServiceProvider
+    internal static class TestsServiceProvider
     {
         public static IServiceProvider GetServiceProvider<TInfrastructureBusService>(Func<IServiceProvider, TInfrastructureBusService> instanceOfInfrastructureBusDelegate) where TInfrastructureBusService : class, IInfrastructureBusService
         {

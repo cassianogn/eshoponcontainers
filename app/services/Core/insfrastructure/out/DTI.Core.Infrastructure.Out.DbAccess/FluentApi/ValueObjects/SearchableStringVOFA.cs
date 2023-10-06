@@ -6,7 +6,7 @@ namespace DTI.Core.Infrastructure.Out.DbAccess.FluentApi.ValueObjects
 {
     public class SearchableStringVOFA
     {
-        public static Action<OwnedNavigationBuilder<TEntity, SearchableStringVO>> Map<TEntity>(bool requied, int maxLength) where TEntity : class, IEntity
+        public static Action<OwnedNavigationBuilder<TEntity, SearchableStringVO>> Map<TEntity>(bool requied, int maxLength) where TEntity : class
         {
             return searchableStringBuilder =>
             {

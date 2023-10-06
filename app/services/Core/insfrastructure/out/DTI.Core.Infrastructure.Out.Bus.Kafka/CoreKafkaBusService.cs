@@ -3,6 +3,7 @@ using DTI.Core.Domain.Services.Bus.Interfaces;
 using DTI.Core.Domain.Services.Bus.Models;
 using Confluent.Kafka;
 using System.Text.Json;
+using Serilog;
 
 namespace DTI.Core.Infrastructure.Out.Bus.Kafka
 {
@@ -22,8 +23,8 @@ namespace DTI.Core.Infrastructure.Out.Bus.Kafka
             var topic = typeof(TData).Name;
             _ = Task.Factory.StartNew(async () =>
             {
+                Log.Information($"consuming data from {topic}");
                 using var consumer = CreateConsumerSubscription(topic);
-                Console.WriteLine($"consuming data from {topic}");
 
                 while (!cancellationToken.IsCancellationRequested)
                 {
@@ -38,7 +39,7 @@ namespace DTI.Core.Infrastructure.Out.Bus.Kafka
                     {
                         continue;
                     }
-                  
+
                     consumer.Commit();
                 }
                 Console.WriteLine($"Shutting down consumer: {consumer.Name}");
@@ -55,8 +56,8 @@ namespace DTI.Core.Infrastructure.Out.Bus.Kafka
             }
             catch (Exception onConsumeError)
             {
-                Console.WriteLine($"Error to consume data from Apache Kafka on delegate. Error: " + onConsumeError.Message);
-                Console.WriteLine(consumedDataResult.Message.Value);
+                Log.Error($"Error to consume data from Apache Kafka on delegate. Error: " + onConsumeError.Message);
+                Log.Error(consumedDataResult.Message.Value);
                 throw new ApplicationCoreException("Error to consume data from Apache Kafka on delegate", onConsumeError);
             }
         }

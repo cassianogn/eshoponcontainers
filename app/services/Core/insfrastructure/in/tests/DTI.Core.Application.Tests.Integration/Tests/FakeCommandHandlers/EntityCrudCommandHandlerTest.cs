@@ -71,7 +71,7 @@ namespace DTI.Core.Application.Tests.Integration.Tests.FakeCommandHandlers
         }
         [Trait("Category", "1 - BaseCommandHandler")]
         [Fact(DisplayName = "3 - Get entity by id"), TestPriority(1.3)]
-        public async Task DeleteEntityComandHandler_NewEntity_SuccessAsync()
+        public async Task GetEntityByIdComandHandler_NewEntity_SuccessAsync()
         {
             // arange
             var fakeEntityDTO = new FakeGetEntityByIdQuery()

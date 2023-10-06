@@ -11,11 +11,11 @@ namespace DTI.Core.Application.Services.EventSourcing.DTOs
             CommandTypeOf = command!.GetType().FullName!;
             CommandType = commandType;
 
-            var idProperty = command.GetType().GetProperty("Id");
-            var hasIdProperty = idProperty != null;
+            var propertyId = command.GetType().GetProperty("Id");
+            var hasIdProperty = propertyId != null;
 
             if (hasIdProperty)
-                EntityId = idProperty?.GetValue(command) as Guid?;
+                EntityId = propertyId?.GetValue(command) as Guid?;
 
 
         }

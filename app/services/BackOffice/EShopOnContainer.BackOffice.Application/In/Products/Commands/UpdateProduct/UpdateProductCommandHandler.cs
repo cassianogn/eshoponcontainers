@@ -22,7 +22,6 @@ namespace EShopOnContainer.BackOffice.Application.In.Products.Commands.UpdatePro
                 request.ProductCategories.Select(categoryDTO => new ProductCategory(Guid.NewGuid(), request.Id, categoryDTO.Id)).ToList(),
                 request.ProductColors.Select(colorDTO => new ProductColor(Guid.NewGuid(), request.Id, colorDTO.Id, colorDTO.StockQuantity)).ToList()
                 );
-
         }
     }
 }
