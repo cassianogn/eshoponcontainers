@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\core\insfrastructure\out\DTI.Core.Infrastructure.Out.DbAccess\DTI.Core.Infrastructure.Out.DbAccess.csproj" />
+    <ProjectReference Include="..\..\..\..\Core\insfrastructure\out\DTI.Core.Infra.Out.DbAccess.MSSql\DTI.Core.Infra.Out.DbAccess.MSSql.csproj" />
     <ProjectReference Include="..\..\..\EShopOnContainer.BackOffice.Domain\EShopOnContainer.BackOffice.Domain.csproj" />
     <ProjectReference Include="..\..\..\EShopOnContainer.BackOffice.Application\EShopOnContainer.BackOffice.Application.csproj" />
   </ItemGroup>

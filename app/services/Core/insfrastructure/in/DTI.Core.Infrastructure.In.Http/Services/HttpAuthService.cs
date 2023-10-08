@@ -1,7 +1,7 @@
 ﻿using DTI.Core.Domain.Auth;
 using DTI.Core.Domain.Auth.Claims;
 
-namespace DTI.Core.Infrastructure.In.Http.Services
+namespace DTI.Core.Infra.In.Http.Services
 {
     public class HttpAuthService
     {

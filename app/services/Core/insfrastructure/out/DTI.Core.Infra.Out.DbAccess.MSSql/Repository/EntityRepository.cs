@@ -3,7 +3,7 @@ using DTI.Core.Domain.Interfaces.Entities;
 using DTI.Core.Domain.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace DTI.Core.Infrastructure.Out.DbAccess.Repository
+namespace DTI.Core.Infra.Out.DbAccess.Repository
 {
     public abstract class EntityRepository<TEntity> : IReaderRepository<TEntity>, IWriterRepository<TEntity>
         where TEntity : class, IEntity

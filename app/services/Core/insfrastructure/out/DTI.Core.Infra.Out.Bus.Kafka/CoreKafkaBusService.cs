@@ -5,7 +5,7 @@ using Confluent.Kafka;
 using System.Text.Json;
 using Serilog;
 
-namespace DTI.Core.Infrastructure.Out.Bus.Kafka
+namespace DTI.Core.Infra.Out.Bus.Kafka
 {
     public abstract class CoreKafkaBusService : IInfrastructureBusService
     {

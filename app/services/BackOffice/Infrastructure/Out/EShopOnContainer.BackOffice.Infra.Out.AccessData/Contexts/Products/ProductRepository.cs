@@ -1,5 +1,5 @@
 ﻿using EShopOnContainer.BackOffice.Domain.Products;
-using DTI.Core.Infrastructure.Out.DbAccess.Repository;
+using DTI.Core.Infra.Out.DbAccess.Repository;
 using Microsoft.EntityFrameworkCore;
 using ShopOnContainers.BackOffice.Domain.Products;
 

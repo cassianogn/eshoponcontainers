@@ -1,9 +1,9 @@
 ﻿using DTI.Core.Domain.Auth;
 using DTI.Core.Domain.Services.DomainNotifications;
-using DTI.Core.Infrastructure.In.Http.Services;
+using DTI.Core.Infra.In.Http.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DTI.Core.Infrastructure.In.Http.Controllers
+namespace DTI.Core.Infra.In.Http.Controllers
 {
     public abstract class CoreController : ControllerBase
     {

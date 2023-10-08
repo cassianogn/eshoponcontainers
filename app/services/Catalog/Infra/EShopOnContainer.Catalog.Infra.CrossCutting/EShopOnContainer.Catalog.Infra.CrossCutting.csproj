@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\insfrastructure\out\DTI.Core.Infra.Out.Observability.ELK\DTI.Core.Infra.Out.Observability.ELK.csproj" />
     <ProjectReference Include="..\..\EShopOnContainer.Catalog.Application\EShopOnContainer.Catalog.Application.csproj" />
     <ProjectReference Include="..\Out\EShopOnContainer.Catalog.Infra.Out.AccessData\EShopOnContainer.Catalog.Infra.Out.AccessData.csproj" />
     <ProjectReference Include="..\Out\EShopOnContainer.Catalog.Infra.Out.Bus.Kafka\EShopOnContainer.Catalog.Infra.Out.Bus.Kafka.csproj" />

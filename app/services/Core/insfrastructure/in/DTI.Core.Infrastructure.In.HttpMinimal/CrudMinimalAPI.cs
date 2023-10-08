@@ -6,7 +6,7 @@ using DTI.Core.Domain.Services.DomainNotifications;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 
-namespace DTI.Core.Infrastructure.In.HttpMinimal
+namespace DTI.Core.Infra.In.HttpMinimal
 {
     public static class CrudMinimalAPI
     {
@@ -71,7 +71,7 @@ namespace DTI.Core.Infrastructure.In.HttpMinimal
             app.MapGet(ROOT_PATH + baseRoute, async (string? searchKey, BusService busService, DomainNotificationService domainNotificationService) =>
             {
                 var query = new TSearchEntityQuery() { QueryKey = searchKey ?? ""};
-                var queryResult = await busService.SendMessage<TSearchEntityQuery, IEnumerable<TSearchEntityViewModel>>(query, BusTransactionType.Infrastructure);
+                var queryResult = await busService.SendMessage<TSearchEntityQuery, IEnumerable<TSearchEntityViewModel>>(query);
                 return MinimalAPIResponse.CareErrors(() => TypedResults.Ok(queryResult.Result), domainNotificationService);
 
             });

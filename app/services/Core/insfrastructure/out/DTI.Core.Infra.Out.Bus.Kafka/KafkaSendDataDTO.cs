@@ -1,7 +1,7 @@
 ﻿using DTI.Core.Domain.Helpers.Exceptions;
 using System.Text.Json;
 
-namespace DTI.Core.Infrastructure.Out.Bus.Kafka
+namespace DTI.Core.Infra.Out.Bus.Kafka
 {
     internal class KafkaTransferDataDTO<TData>
     {

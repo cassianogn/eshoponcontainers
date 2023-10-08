@@ -1,5 +1,5 @@
 
-using DTI.Core.Infrastructure.In.HttpMinimal;
+using DTI.Core.Infra.In.HttpMinimal;
 using EShopOnContainer.BackOffice.Application.In.Products.Commands.AddProduct;
 using EShopOnContainer.BackOffice.Application.In.Products.Commands.DeleteProduct;
 using EShopOnContainer.BackOffice.Application.In.Products.Commands.UpdateProduct;
@@ -8,9 +8,10 @@ using EShopOnContainer.BackOffice.Application.In.Products.Queries.SearchProduct;
 using EShopOnContainer.BackOffice.Infra.CrossCutting;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var webApplicationObservabilityConfiguration = builder.AddObservability();
 // Add services to the container.
 builder.Services.AddApplicationWithDependencies(builder.Configuration.GetConnectionString("DefaultConnection")!, builder.Configuration.GetSection("BusServiceConnection:Kafka").Value!) ;
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -26,6 +27,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.AddNamedEnityCrudFor<SearchProductQuery, SearchProductViewModel, GetProductByIdQuery, GetProductByIdViewModel, AddProductCommand, UpdateProductCommand, DeleteProductCommand>("product");
-
+webApplicationObservabilityConfiguration.Invoke(app);
 
 app.Run();

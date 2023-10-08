@@ -1,7 +1,7 @@
 ﻿using DTI.Core.Domain.Services.DomainNotifications;
 using Microsoft.AspNetCore.Http;
 
-namespace DTI.Core.Infrastructure.In.HttpMinimal
+namespace DTI.Core.Infra.In.HttpMinimal
 {
     public static class MinimalAPIResponse
     {

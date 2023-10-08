@@ -1,14 +1,9 @@
 using DTI.CommandsCentral.Infra.CrossCutting;
 using DTI.CommandsCentral.Infra.In.Http;
-using DTI.CommandsCentral.Infra.In.Http.Elk;
-using Elastic.Apm.NetCoreAll;
-using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Logging.ClearProviders();
-builder.Host.UseSerilog();
+var webApplicationObservabilityConfiguration = builder.AddObservability();
 
-builder.Services.AddObservabilityModule(builder.Configuration);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddApplicationWithDependencies(builder.Configuration);
@@ -24,9 +19,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
-
-app.UseAllElasticApm(builder.Configuration);
+webApplicationObservabilityConfiguration.Invoke(app);
 app.UseHttpsRedirection();
 app.MapControllers();
 app.Run();

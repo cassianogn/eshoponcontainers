@@ -9,21 +9,11 @@
 		<DockerfileContext>..\..\..\..\..</DockerfileContext>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Elastic.Apm.NetCoreAll" Version="1.24.0" />
 		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.7" />
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />		<PackageReference Include="Elastic.Apm.NetCoreAll" Version="1.24.0" />
 
-		<PackageReference Include="Elastic.Serilog.Sinks" Version="8.6.1" />
-		<PackageReference Include="Elastic.Apm.SerilogEnricher" Version="8.6.1" />
-		<PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
-		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
-		<PackageReference Include="Serilog.Exceptions" Version="8.4.0" />
-		<PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
-		<PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
-		<PackageReference Include="Serilog.Enrichers.CorrelationId" Version="3.0.1" />
-		<PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />		
-		<PackageReference Include="Serilog.Sinks.Elasticsearch" Version="9.0.3" />
+		
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\..\DTI.CommandsCentral.Infra.CrossCutting\DTI.CommandsCentral.Infra.CrossCutting.csproj" />

@@ -5,8 +5,8 @@ using DTI.Core.Application.Tests.Integration.Tests.FakeCommandHandlers.FakeUpdat
 using DTI.Core.Domain.Auth;
 using DTI.Core.Domain.Services.Bus;
 using DTI.Core.Domain.Services.DomainNotifications;
-using DTI.Core.Infrastructure.In.Http.Controllers;
-using DTI.Core.Infrastructure.In.Http.Services;
+using DTI.Core.Infra.In.Http.Controllers;
+using DTI.Core.Infra.In.Http.Services;
 
 namespace DTI.Core.Application.Tests.Integration.Tests.FakeControllers
 {

@@ -2,7 +2,7 @@
 using DTI.Core.Domain.ValueObject;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DTI.Core.Infrastructure.Out.DbAccess.FluentApi.ValueObjects
+namespace DTI.Core.Infra.Out.DbAccess.FluentApi.ValueObjects
 {
     public class SearchableStringVOFA
     {

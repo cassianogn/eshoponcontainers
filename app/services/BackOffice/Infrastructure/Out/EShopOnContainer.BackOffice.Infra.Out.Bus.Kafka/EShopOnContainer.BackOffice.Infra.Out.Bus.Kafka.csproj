@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\core\domain\DTI.Core.Domain\DTI.Core.Domain.csproj" />
-    <ProjectReference Include="..\..\..\..\core\insfrastructure\out\DTI.Core.Infrastructure.Out.Bus.Kafka\DTI.Core.Infrastructure.Out.Bus.Kafka.csproj" />
+    <ProjectReference Include="..\..\..\..\Core\insfrastructure\out\DTI.Core.Infra.Out.Bus.Kafka\DTI.Core.Infra.Out.Bus.Kafka.csproj" />
   </ItemGroup>
 
 </Project>

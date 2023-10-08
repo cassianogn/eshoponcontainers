@@ -5,7 +5,7 @@ using DTI.Core.Domain.Services.Bus.Interfaces;
 using DTI.Core.Domain.Services.DomainNotifications;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DTI.Core.Infrastructure.In.Http.Controllers
+namespace DTI.Core.Infra.In.Http.Controllers
 {
     public abstract class EntityController<TGetByIdQuery, TGetByIdViewModel, TAddCommand, TUpdateCommand, TDeleteCommand> : CoreController
         where TGetByIdQuery : class, IEntityDTO, IAppMessage<TGetByIdViewModel>, new()

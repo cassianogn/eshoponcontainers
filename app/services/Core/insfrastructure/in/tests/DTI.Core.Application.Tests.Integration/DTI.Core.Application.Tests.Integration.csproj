@@ -37,7 +37,7 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\..\..\..\application\DTI.Core.Application\DTI.Core.Application.csproj" />
 	  <ProjectReference Include="..\..\..\..\domain\DTI.Core.Domain\DTI.Core.Domain.csproj" />
-	  <ProjectReference Include="..\..\..\out\DTI.Core.Infrastructure.Out.DbAccess\DTI.Core.Infrastructure.Out.DbAccess.csproj" />
+	  <ProjectReference Include="..\..\..\out\DTI.Core.Infra.Out.DbAccess.MSSql\DTI.Core.Infra.Out.DbAccess.MSSql.csproj" />
 	  <ProjectReference Include="..\..\DTI.Core.Infrastructure.In.Http\DTI.Core.Infrastructure.In.Http.csproj" />
 	</ItemGroup>
 

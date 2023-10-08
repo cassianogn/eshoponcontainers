@@ -3,7 +3,7 @@ using DTI.Core.Domain.Helpers.Extensions;
 using DTI.Core.Domain.Interfaces.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace DTI.Core.Infrastructure.Out.DbAccess.Repository
+namespace DTI.Core.Infra.Out.DbAccess.Repository
 {
     public class NamedEntityRepository<TEntity> : EntityRepository<TEntity>
         where TEntity : class, INamedEntity

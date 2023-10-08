@@ -3,7 +3,7 @@ using DTI.Core.Domain.Helpers.Constants;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DTI.Core.Infrastructure.Out.DbAccess.FluentApi.Entities
+namespace DTI.Core.Infra.Out.DbAccess.FluentApi.Entities
 {
     public class EntityFA<TEntity> : IEntityTypeConfiguration<TEntity> where TEntity : Entity<TEntity>
     {

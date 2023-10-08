@@ -1,4 +1,4 @@
-﻿using DTI.Core.Infrastructure.Out.Bus.Kafka;
+﻿using DTI.Core.Infra.Out.Bus.Kafka;
 
 namespace DTI.CommandsCentral.Infra.Out.Bus.Kafka
 {

@@ -1,5 +1,5 @@
 ﻿using DTI.Core.Application.Tests.Integration.Domain.FakieEntities;
-using DTI.Core.Infrastructure.Out.DbAccess.FluentApi.Entities;
+using DTI.Core.Infra.Out.DbAccess.FluentApi.Entities;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DTI.Core.Application.Tests.Integration.Infrastructure.DbAccess.FakeEntities

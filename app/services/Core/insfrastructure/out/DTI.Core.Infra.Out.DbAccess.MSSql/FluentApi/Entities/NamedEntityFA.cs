@@ -1,8 +1,8 @@
 ﻿using DTI.Core.Domain.Entities;
-using DTI.Core.Infrastructure.Out.DbAccess.FluentApi.ValueObjects;
+using DTI.Core.Infra.Out.DbAccess.FluentApi.ValueObjects;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DTI.Core.Infrastructure.Out.DbAccess.FluentApi.Entities
+namespace DTI.Core.Infra.Out.DbAccess.FluentApi.Entities
 {
     public class NamedEntityFA<TEntity> : EntityFA<TEntity> where TEntity : NamedEntity<TEntity>
     {

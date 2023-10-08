@@ -1,8 +1,8 @@
 ﻿using DTI.Core.Domain.Auth;
 using DTI.Core.Domain.Services.Bus;
 using DTI.Core.Domain.Services.DomainNotifications;
-using DTI.Core.Infrastructure.In.Http.Controllers;
-using DTI.Core.Infrastructure.In.Http.Services;
+using DTI.Core.Infra.In.Http.Controllers;
+using DTI.Core.Infra.In.Http.Services;
 using EShopOnContainer.BackOffice.Application.In.Products.Commands.AddProduct;
 using EShopOnContainer.BackOffice.Application.In.Products.Commands.DeleteProduct;
 using EShopOnContainer.BackOffice.Application.In.Products.Commands.UpdateProduct;

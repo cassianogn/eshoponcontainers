@@ -1,4 +1,4 @@
-﻿using DTI.Core.Infrastructure.Out.Bus.Kafka;
+﻿using DTI.Core.Infra.Out.Bus.Kafka;
 
 namespace EShopOnContainer.BackOffice.Infra.Out.Bus.Kafka
 {

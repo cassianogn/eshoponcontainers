@@ -16,6 +16,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\Core\insfrastructure\out\DTI.Core.Infra.Out.DbAccess.MSSql\DTI.Core.Infra.Out.DbAccess.MSSql.csproj" />
 		<ProjectReference Include="..\..\..\DTI.CommandsCentral.Application\DTI.CommandsCentral.Application.csproj" />
 		<ProjectReference Include="..\..\..\DTI.CommandsCentral.Domain\DTI.CommandsCentral.Domain.csproj" />
 	</ItemGroup>
