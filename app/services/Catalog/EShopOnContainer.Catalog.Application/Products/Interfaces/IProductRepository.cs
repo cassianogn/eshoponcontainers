@@ -6,5 +6,6 @@ namespace EShopOnContainer.Catalog.Application.Products.Interfaces
     {
         public Task Add(ProductModel product);
         public Task<IEnumerable<ProductModel>> Search(string searchKey);
+        public Task<IEnumerable<ProductModel>> GetById(string searchKey);
     }
 }

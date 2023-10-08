@@ -5,21 +5,21 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace EShopOnContainer.Catalog.Infra.In.Tests.Products
 {
-    //[TestCaseOrderer("DTI.Core.Application.Tests.Integration.Infrastructure.TestsConfig.Orders.PriorityOrderer", "DTI.Core.Application.Tests.Integration")]
-    //[Collection(nameof(FakeEntityHandlerCollection))]
+    [TestCaseOrderer("EShopOnContainer.Catalog.Infra.In.Tests.Orders.PriorityOrderer", "EShopOnContainer.Catalog.Infra.In.Tests")]
+    [Collection(nameof(CatalogProductCollection))]
     internal class CatalogProductTests
     {
         private readonly BusService _bus;
         private readonly DomainNotificationService _domainNotificationService;
+        private readonly IProductRepository _repository;
 
-        //public CatalogProductTests(FakeEntityHandlerFixture fixture)
-        public CatalogProductTests()
+        public CatalogProductTests(CatalogProductCollection fixture)
         {
             var providers = new TestServiceProvider().ServiceProvider;
 
             _bus = providers.GetRequiredService<BusService>();
             _domainNotificationService = providers.GetRequiredService<DomainNotificationService>();
-            //_repository = providers.GetRequiredService<IProductRepository>();
+            _repository = providers.GetRequiredService<IProductRepository>();
             //_fixture = fixture;
         }
     }
