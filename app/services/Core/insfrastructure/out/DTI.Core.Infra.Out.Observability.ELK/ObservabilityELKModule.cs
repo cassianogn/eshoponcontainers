@@ -17,7 +17,9 @@ namespace DTI.Core.Infra.Out.Observability.ELK
             builder.Logging.ClearProviders();
             builder.Host.UseSerilog();
 
-            var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")!;
+            var elasticCloudId = builder.Configuration.GetSection("Elasticsearch:CloudId").Value!;
+            var elasticApiKey = builder.Configuration.GetSection("Elasticsearch:ApiKey").Value!;
 
             Log.Logger = new LoggerConfiguration()
            .Enrich.FromLogContext()
@@ -29,7 +31,7 @@ namespace DTI.Core.Infra.Out.Observability.ELK
            .WriteTo.Console()
            .WriteTo.Async(writeTo =>
            {
-               writeTo.ElasticCloud("0634905f87ce4532b028ef27f7812bb4:ZWFzdHVzMi5henVyZS5lbGFzdGljLWNsb3VkLmNvbTo0NDMkY2E3OTNmOGIxMWJhNDhhZjg0MWY5NGI3Mzg4MGU0NzYkNzNkYzhlOWQ1MGRmNGVhNWEzYWZiMzBiOGFkNTdmYTU=", "Mzc1QzdZb0JJN1VPZnl0Rk1WVTE6SXJucklyQTBTU0NWbzdKdFBzRm9JUQ==", config =>
+               writeTo.ElasticCloud(elasticCloudId, elasticApiKey, config =>
                {
                    config.DataStream = new DataStreamName("logs", "eshop-on-container", @namespace);
                    config.BootstrapMethod = BootstrapMethod.Failure;
