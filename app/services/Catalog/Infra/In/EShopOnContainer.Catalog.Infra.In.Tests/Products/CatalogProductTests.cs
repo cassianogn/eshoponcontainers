@@ -37,5 +37,6 @@ namespace EShopOnContainer.Catalog.Infra.In.Tests.Products
             Assert.NotNull(commandResult);
 
         }
+
     }
 }
