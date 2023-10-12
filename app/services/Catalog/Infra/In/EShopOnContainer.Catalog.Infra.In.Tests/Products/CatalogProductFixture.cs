@@ -6,7 +6,7 @@ namespace EShopOnContainer.Catalog.Infra.In.Tests.Products
     public class CatalogProductCollection : ICollectionFixture<CatalogProductFixture>
     {
     }
-    internal class CatalogProductFixture
+    public class CatalogProductFixture
     {
         public ProductModel Product { get; set; }
     }

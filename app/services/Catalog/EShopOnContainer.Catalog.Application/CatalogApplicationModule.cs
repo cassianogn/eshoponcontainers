@@ -19,7 +19,7 @@ namespace EShopOnContainer.Catalog.Application
         public static IServiceCollection AddCatalogApplicationRepositories<TProductRepository>(this IServiceCollection services)
            where TProductRepository : class, IProductRepository
         {
-            services.AddScoped<TProductRepository>();
+            services.AddScoped<IProductRepository, TProductRepository>();
             return services;
         }
     }

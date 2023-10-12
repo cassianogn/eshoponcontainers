@@ -16,7 +16,7 @@ namespace EShopOnContainer.Catalog.Application.Products.UseCases.Queries.SearchP
 
         public override async Task<CommandResult<IEnumerable<SearchProductViewModel>>> ExecuteAsync(SearchProductQuery request, CancellationToken cancellationToken)
         {
-            var productsDb = await _productRepository.Search(request.SearchKey);
+            var productsDb = await _productRepository.Search(1, request.SearchKey);
             var productsViewModel = productsDb.Select(productDb => new SearchProductViewModel
             {
                 Id = productDb.Id,

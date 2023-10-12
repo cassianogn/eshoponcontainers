@@ -9,10 +9,10 @@ namespace EShopOnContainer.Catalog.Infra.CrossCutting
 {
     public static class ConfigureModules
     {
-        public static IServiceCollection AddApplicationWithDependencies(this IServiceCollection services, string connectionStringDb, string connectionStringBus)
+        public static IServiceCollection AddApplicationWithDependencies(this IServiceCollection services, string connectionStringBus, string elasticCloudId, string elasticCloudKey)
         {
             services.AddCatalogApplicationApplicationBase(services => new CatalogKafkaBusService(connectionStringBus, "back-office-group"));
-            services.AddCatalogAccessData(connectionStringDb);
+            services.AddCatalogAccessData(elasticCloudId, elasticCloudKey);
             return services;
         }
 
